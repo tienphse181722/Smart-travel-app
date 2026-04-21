@@ -131,7 +131,7 @@ class _TripDetailScreenState extends State<TripDetailScreen>
 
   Widget _buildDaySelector() {
     return SizedBox(
-      height: 80,
+      height: 85,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -154,7 +154,7 @@ class _TripDetailScreenState extends State<TripDetailScreen>
               borderRadius: BorderRadius.circular(16),
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 200),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
                 decoration: BoxDecoration(
                   gradient: isSelected
                       ? const LinearGradient(
@@ -172,20 +172,21 @@ class _TripDetailScreenState extends State<TripDetailScreen>
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       'Ngày ${index + 1}',
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 11,
                         fontWeight: FontWeight.w600,
                         color: isSelected ? Colors.white : const Color(0xFF6B7280),
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 2),
                     Text(
                       dateFormatter.format(date),
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: isSelected ? Colors.white : const Color(0xFF000000),
                       ),
@@ -193,7 +194,7 @@ class _TripDetailScreenState extends State<TripDetailScreen>
                     Text(
                       monthFormatter.format(date),
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 11,
                         color: isSelected ? Colors.white70 : const Color(0xFF6B7280),
                       ),
                     ),
