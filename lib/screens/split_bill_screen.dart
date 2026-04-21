@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 import '../models/trip.dart';
 import '../models/member.dart';
 import '../models/expense.dart';
 import '../services/split_bill_service.dart';
+import 'add_expense_screen.dart';
 
 class SplitBillScreen extends StatefulWidget {
   final Trip trip;

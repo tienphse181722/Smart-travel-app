@@ -28,10 +28,18 @@ class SplitBillService {
       // Người trả tiền
       paid[expense.paidBy] = (paid[expense.paidBy] ?? 0) + expense.amount;
 
-      // Chia đều cho những người tham gia
-      final shareAmount = expense.amount / expense.sharedWith.length;
-      for (var memberId in expense.sharedWith) {
-        shouldPay[memberId] = (shouldPay[memberId] ?? 0) + shareAmount;
+      // Chia tiền theo loại
+      if (expense.splitType == SplitType.custom && expense.customAmounts != null) {
+        // Chia custom
+        expense.customAmounts!.forEach((memberId, amount) {
+          shouldPay[memberId] = (shouldPay[memberId] ?? 0) + amount;
+        });
+      } else {
+        // Chia đều
+        final shareAmount = expense.amount / expense.sharedWith.length;
+        for (var memberId in expense.sharedWith) {
+          shouldPay[memberId] = (shouldPay[memberId] ?? 0) + shareAmount;
+        }
       }
     }
 
@@ -127,9 +135,17 @@ class SplitBillService {
     }
 
     for (var expense in expenses) {
-      final shareAmount = expense.amount / expense.sharedWith.length;
-      for (var memberId in expense.sharedWith) {
-        shouldPay[memberId] = (shouldPay[memberId] ?? 0) + shareAmount;
+      if (expense.splitType == SplitType.custom && expense.customAmounts != null) {
+        // Chia custom
+        expense.customAmounts!.forEach((memberId, amount) {
+          shouldPay[memberId] = (shouldPay[memberId] ?? 0) + amount;
+        });
+      } else {
+        // Chia đều
+        final shareAmount = expense.amount / expense.sharedWith.length;
+        for (var memberId in expense.sharedWith) {
+          shouldPay[memberId] = (shouldPay[memberId] ?? 0) + shareAmount;
+        }
       }
     }
 
