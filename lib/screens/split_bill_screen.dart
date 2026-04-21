@@ -91,6 +91,39 @@ class _SplitBillScreenState extends State<SplitBillScreen>
               ],
             ),
           ),
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.more_vert_rounded),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            onSelected: (value) {
+              if (value == 'reset') {
+                _resetAllExpenses();
+              } else if (value == 'clear') {
+                _clearAll();
+              }
+            },
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: 'reset',
+                child: Row(
+                  children: [
+                    Icon(Icons.refresh_rounded, size: 20),
+                    SizedBox(width: 12),
+                    Text('Xóa tất cả chi tiêu'),
+                  ],
+                ),
+              ),
+              const PopupMenuItem(
+                value: 'clear',
+                child: Row(
+                  children: [
+                    Icon(Icons.delete_sweep_rounded, size: 20, color: Colors.red),
+                    SizedBox(width: 12),
+                    Text('Xóa tất cả dữ liệu', style: TextStyle(color: Colors.red)),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -294,13 +327,38 @@ class _SplitBillScreenState extends State<SplitBillScreen>
                     ],
                   ),
                 ),
-                Text(
-                  formatter.format(expense.amount),
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF2F80ED),
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      formatter.format(expense.amount),
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF2F80ED),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: expense.splitType == SplitType.equal
+                            ? Colors.green.shade50
+                            : Colors.orange.shade50,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        expense.splitType == SplitType.equal ? 'Chia đều' : 'Chia custom',
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: expense.splitType == SplitType.equal
+                              ? Colors.green.shade700
+                              : Colors.orange.shade700,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -314,11 +372,45 @@ class _SplitBillScreenState extends State<SplitBillScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Chia cho ${expense.sharedWith.length} người',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                  const SizedBox(height: 4),
+                  if (expense.splitType == SplitType.equal) ...[
+                    Text(
+                      'Chia cho ${expense.sharedWith.length} người',
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
+                  ] else if (expense.customAmounts != null) ...[
+                    Text(
+                      'Chia custom cho ${expense.customAmounts!.length} người:',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    ...expense.customAmounts!.entries.map((entry) {
+                      final member = _trip.members.firstWhere((m) => m.id == entry.key);
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 4),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              '• ${member.name}',
+                              style: const TextStyle(fontSize: 13),
+                            ),
+                            Text(
+                              formatter.format(entry.value),
+                              style: const TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF2F80ED),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                  ],
+                  const SizedBox(height: 8),
                   Text(
                     dateFormatter.format(expense.createdAt),
                     style: TextStyle(
@@ -328,6 +420,20 @@ class _SplitBillScreenState extends State<SplitBillScreen>
                   ),
                 ],
               ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton.icon(
+                  onPressed: () => _deleteExpense(expense),
+                  icon: const Icon(Icons.delete_outline_rounded, size: 18),
+                  label: const Text('Xóa'),
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.red,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -355,83 +461,120 @@ class _SplitBillScreenState extends State<SplitBillScreen>
       );
     }
 
-    return ListView.builder(
-      padding: const EdgeInsets.all(16),
-      itemCount: debts.length,
-      itemBuilder: (context, index) {
-        final debt = debts[index];
-        final from = _trip.members.firstWhere((m) => m.id == debt.fromMemberId);
-        final to = _trip.members.firstWhere((m) => m.id == debt.toMemberId);
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            padding: const EdgeInsets.all(16),
+            itemCount: debts.length,
+            itemBuilder: (context, index) {
+              final debt = debts[index];
+              final from = _trip.members.firstWhere((m) => m.id == debt.fromMemberId);
+              final to = _trip.members.firstWhere((m) => m.id == debt.toMemberId);
 
-        return Card(
-          margin: const EdgeInsets.only(bottom: 12),
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 24,
-                  backgroundColor: Colors.red.withValues(alpha: 0.1),
-                  child: Text(
-                    from.name[0].toUpperCase(),
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              return Card(
+                margin: const EdgeInsets.only(bottom: 12),
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
                     children: [
-                      Text(
-                        from.name,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                      CircleAvatar(
+                        radius: 24,
+                        backgroundColor: Colors.red.withValues(alpha: 0.1),
+                        child: Text(
+                          from.name[0].toUpperCase(),
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red,
+                          ),
                         ),
                       ),
-                      const SizedBox(height: 4),
-                      Row(
-                        children: [
-                          const Icon(Icons.arrow_forward_rounded, size: 16),
-                          const SizedBox(width: 4),
-                          Text(
-                            to.name,
-                            style: Theme.of(context).textTheme.bodyMedium,
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              from.name,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Row(
+                              children: [
+                                const Icon(Icons.arrow_forward_rounded, size: 16),
+                                const SizedBox(width: 4),
+                                Text(
+                                  to.name,
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 8,
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF2F80ED), Color(0xFF56CCF2)],
                           ),
-                        ],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          formatter.format(debt.amount),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFF2F80ED), Color(0xFF56CCF2)],
-                    ),
+              );
+            },
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, -5),
+              ),
+            ],
+          ),
+          child: SafeArea(
+            child: SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: ElevatedButton.icon(
+                onPressed: _markAllAsPaid,
+                icon: const Icon(Icons.check_circle_rounded),
+                label: const Text('Đánh dấu đã thanh toán'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: Text(
-                    formatter.format(debt.amount),
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
                 ),
-              ],
+              ),
             ),
           ),
-        );
-      },
+        ),
+      ],
     );
   }
 
@@ -590,113 +733,228 @@ class _SplitBillScreenState extends State<SplitBillScreen>
       return;
     }
 
-    final descController = TextEditingController();
-    final amountController = TextEditingController();
-    String? selectedPayer = _trip.members.first.id;
-    final Set<String> selectedSharedWith = _trip.members.map((m) => m.id).toSet();
+    // Flatten dailyActivities to a single list
+    final allActivities = _trip.dailyActivities.expand((day) => day).toList();
 
-    final result = await showDialog<Map<String, dynamic>>(
-      context: context,
-      builder: (context) => StatefulBuilder(
-        builder: (context, setDialogState) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: const Text('Thêm chi tiêu'),
-          content: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextField(
-                  controller: descController,
-                  decoration: const InputDecoration(
-                    labelText: 'Mô tả',
-                    hintText: 'VD: Ăn trưa',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                TextField(
-                  controller: amountController,
-                  decoration: const InputDecoration(
-                    labelText: 'Số tiền',
-                    suffixText: '₫',
-                  ),
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                ),
-                const SizedBox(height: 16),
-                DropdownButtonFormField<String>(
-                  initialValue: selectedPayer,
-                  decoration: const InputDecoration(labelText: 'Người trả'),
-                  items: _trip.members.map((member) {
-                    return DropdownMenuItem(
-                      value: member.id,
-                      child: Text(member.name),
-                    );
-                  }).toList(),
-                  onChanged: (value) {
-                    setDialogState(() {
-                      selectedPayer = value;
-                    });
-                  },
-                ),
-                const SizedBox(height: 16),
-                const Text('Chia cho:', style: TextStyle(fontWeight: FontWeight.bold)),
-                ..._trip.members.map((member) {
-                  return CheckboxListTile(
-                    title: Text(member.name),
-                    value: selectedSharedWith.contains(member.id),
-                    onChanged: (value) {
-                      setDialogState(() {
-                        if (value == true) {
-                          selectedSharedWith.add(member.id);
-                        } else {
-                          selectedSharedWith.remove(member.id);
-                        }
-                      });
-                    },
-                  );
-                }),
-              ],
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Hủy'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                if (descController.text.isNotEmpty &&
-                    amountController.text.isNotEmpty &&
-                    selectedSharedWith.isNotEmpty) {
-                  Navigator.pop(context, {
-                    'description': descController.text,
-                    'amount': double.parse(amountController.text),
-                    'paidBy': selectedPayer,
-                    'sharedWith': selectedSharedWith.toList(),
-                  });
-                }
-              },
-              child: const Text('Thêm'),
-            ),
-          ],
+    final result = await Navigator.push<Expense>(
+      context,
+      MaterialPageRoute(
+        builder: (context) => AddExpenseScreen(
+          members: _trip.members,
+          activities: allActivities.isNotEmpty ? allActivities : null,
         ),
       ),
     );
 
     if (result != null) {
       setState(() {
-        final newExpense = Expense(
-          id: _uuid.v4(),
-          description: result['description'],
-          amount: result['amount'],
-          paidBy: result['paidBy'],
-          sharedWith: result['sharedWith'],
-          createdAt: DateTime.now(),
-        );
+        final newExpense = result.copyWith(id: _uuid.v4());
         _trip = _trip.copyWith(
           expenses: [..._trip.expenses, newExpense],
         );
       });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('Đã thêm chi tiêu'),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          ),
+        );
+      }
+    }
+  }
+
+  void _deleteExpense(Expense expense) async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Text('Xác nhận xóa'),
+        content: Text('Bạn có chắc muốn xóa chi tiêu "${expense.description}"?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Hủy'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            child: const Text('Xóa'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm == true) {
+      setState(() {
+        _trip = _trip.copyWith(
+          expenses: _trip.expenses.where((e) => e.id != expense.id).toList(),
+        );
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('Đã xóa chi tiêu'),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          ),
+        );
+      }
+    }
+  }
+
+  void _markAllAsPaid() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Text('Xác nhận thanh toán'),
+        content: const Text(
+          'Đánh dấu tất cả các khoản nợ đã được thanh toán?\n\n'
+          'Lưu ý: Thao tác này sẽ xóa tất cả chi tiêu hiện tại.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Hủy'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+            child: const Text('Xác nhận'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm == true) {
+      setState(() {
+        _trip = _trip.copyWith(expenses: []);
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('Đã thanh toán tất cả'),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          ),
+        );
+      }
+    }
+  }
+
+  void _resetAllExpenses() async {
+    if (_trip.expenses.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Không có chi tiêu nào để xóa'),
+          backgroundColor: Colors.orange,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        ),
+      );
+      return;
+    }
+
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Text('Xóa tất cả chi tiêu'),
+        content: Text('Bạn có chắc muốn xóa ${_trip.expenses.length} chi tiêu?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Hủy'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            child: const Text('Xóa tất cả'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm == true) {
+      setState(() {
+        _trip = _trip.copyWith(expenses: []);
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('Đã xóa tất cả chi tiêu'),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          ),
+        );
+      }
+    }
+  }
+
+  void _clearAll() async {
+    if (_trip.members.isEmpty && _trip.expenses.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Không có dữ liệu để xóa'),
+          backgroundColor: Colors.orange,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        ),
+      );
+      return;
+    }
+
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Text('Xóa tất cả dữ liệu'),
+        content: const Text(
+          'Bạn có chắc muốn xóa tất cả thành viên và chi tiêu?\n\n'
+          'Lưu ý: Thao tác này không thể hoàn tác.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Hủy'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.pop(context, true),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            child: const Text('Xóa tất cả'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm == true) {
+      setState(() {
+        _trip = _trip.copyWith(
+          members: [],
+          expenses: [],
+        );
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('Đã xóa tất cả dữ liệu'),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          ),
+        );
+      }
     }
   }
 }
