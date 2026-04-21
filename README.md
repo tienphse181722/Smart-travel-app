@@ -1,195 +1,194 @@
-# Smart Travel App - Ứng dụng Du lịch Thông minh
+# 🌍 Smart Travel App
 
-Ứng dụng Flutter giúp tự động tạo lịch trình du lịch, quản lý chi tiêu và gợi ý địa điểm.
+Ứng dụng du lịch thông minh giúp lên kế hoạch, quản lý lịch trình và chi phí cho chuyến đi của bạn.
 
-## ✨ Tính năng (Phase 1 - CORE)
+![Flutter](https://img.shields.io/badge/Flutter-3.11.4-02569B?logo=flutter)
+![Dart](https://img.shields.io/badge/Dart-3.0+-0175C2?logo=dart)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-### ✅ Đã hoàn thành
+## ✨ Tính năng
 
-1. **Tạo chuyến đi**
-   - Nhập địa điểm, số ngày, ngày bắt đầu
-   - Tự động generate lịch trình
+### 🎯 Phase 1-3: Quản lý chuyến đi cơ bản
+- ✅ Tạo và quản lý chuyến đi
+- ✅ Lên lịch trình theo ngày
+- ✅ Thêm hoạt động (ăn uống, vui chơi)
+- ✅ Tính toán chi phí
+- ✅ Chia tiền nhóm
+- ✅ Xem bản đồ và tìm địa điểm gần đây
+- ✅ Tối ưu hóa lộ trình
 
-2. **Auto generate lịch trình**
-   - Sáng → Place (địa điểm vui chơi)
-   - Trưa → Food (ăn uống)
-   - Chiều → Place
-   - Tối → Food
+### 🎫 Phase 4: Quản lý vé (MỚI!)
+- ✅ **Thêm vé**: Lưu thông tin vé máy bay, tàu, xe, khách sạn
+- ✅ **Upload ảnh vé**: Chụp hoặc chọn ảnh từ thư viện
+- ✅ **Quản lý mã vé**: Lưu và sao chép mã booking
+- ✅ **Liên kết lịch trình**: Gắn vé với hoạt động cụ thể
+- ✅ **Link đặt vé**: Lưu và mở link booking trực tiếp
+- ✅ **Xem chi tiết**: Hiển thị đầy đủ thông tin vé
+- ✅ **Chỉnh sửa & xóa**: Quản lý vé dễ dàng
 
-3. **Timeline UI (kiểu TikTok)**
-   - Scroll dọc
-   - Card hiển thị: thời gian, tên, loại, chi phí
-   - Icon phân biệt Food/Place
+## 📱 Screenshots
 
-4. **Auto tính tiền**
-   - Tính từ avg_cost
-   - Hiển thị tổng tiền theo ngày
-   - Hiển thị tổng tiền cả chuyến
+_Coming soon..._
 
-5. **Chỉnh sửa lịch trình**
-   - Thêm activity thủ công
-   - Xóa activity (swipe left)
-   - Sửa activity (tap vào card)
-   - Tab chọn: Ăn uống / Vui chơi
+## 🚀 Bắt đầu
 
-6. **Dữ liệu tách riêng**
-   - ✅ Place (places.json) - 8 địa điểm
-   - ✅ FoodPlace (foods.json) - 10 địa điểm
-   - Mỗi loại có: id, name, lat, lng, tags, avg_cost
+### Yêu cầu
+- Flutter SDK 3.11.4 trở lên
+- Dart 3.0 trở lên
+- Android Studio / VS Code
+- Git
 
-7. **Search & Filter**
-   - Tìm kiếm theo tên
-   - Lọc theo tag
+### Cài đặt
 
-## 🏗️ Kiến trúc
+1. **Clone repository**
+```bash
+git clone https://github.com/tienphse181722/Smart-travel-app.git
+cd Smart-travel-app/smart_travel_app
+```
+
+2. **Cài đặt dependencies**
+```bash
+flutter pub get
+```
+
+3. **Chạy ứng dụng**
+```bash
+flutter run
+```
+
+### Build cho production
+
+**Android:**
+```bash
+flutter build apk --release
+```
+
+**iOS:**
+```bash
+flutter build ios --release
+```
+
+## 📦 Dependencies chính
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # UI & Navigation
+  cupertino_icons: ^1.0.8
+  
+  # State Management & Data
+  shared_preferences: ^2.2.2
+  
+  # Date & Time
+  intl: ^0.19.0
+  
+  # Maps & Location
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  
+  # Network
+  http: ^1.2.0
+  
+  # Image & Media (Phase 4)
+  image_picker: ^1.0.7
+  path_provider: ^2.1.2
+  url_launcher: ^6.2.4
+  
+  # Utilities
+  uuid: ^4.5.1
+```
+
+## 🏗️ Cấu trúc dự án
 
 ```
 lib/
-├── models/
-│   ├── activity.dart       # Model cho hoạt động trong lịch trình
-│   ├── place.dart          # Model cho địa điểm vui chơi
-│   ├── food_place.dart     # Model cho địa điểm ăn uống
-│   └── trip.dart           # Model cho chuyến đi
-├── services/
-│   ├── data_service.dart   # Load & filter dữ liệu từ JSON
-│   └── itinerary_service.dart  # Generate lịch trình tự động
-├── screens/
-│   ├── home_screen.dart    # Danh sách chuyến đi
-│   ├── create_trip_screen.dart  # Tạo chuyến đi mới
-│   ├── trip_detail_screen.dart  # Timeline lịch trình
-│   ├── add_activity_screen.dart # Thêm activity
-│   └── edit_activity_screen.dart # Sửa activity
-└── main.dart
+├── main.dart                 # Entry point
+├── models/                   # Data models
+│   ├── trip.dart
+│   ├── activity.dart
+│   ├── ticket.dart          # Phase 4
+│   ├── member.dart
+│   ├── expense.dart
+│   └── ...
+├── screens/                  # UI Screens
+│   ├── home_screen.dart
+│   ├── trip_detail_screen.dart
+│   ├── ticket_list_screen.dart      # Phase 4
+│   ├── add_ticket_screen.dart       # Phase 4
+│   ├── ticket_detail_screen.dart    # Phase 4
+│   └── ...
+├── services/                 # Business Logic
+│   ├── ticket_service.dart          # Phase 4
+│   ├── data_service.dart
+│   ├── split_bill_service.dart
+│   └── ...
+├── widgets/                  # Reusable Widgets
+│   ├── ticket_card.dart             # Phase 4
+│   └── ...
+└── utils/                    # Utilities
+    ├── app_theme.dart
+    └── logger.dart
 ```
 
-## 📦 Dependencies
+## 📖 Tài liệu
 
-- `intl`: Format tiền tệ và ngày tháng
-- `uuid`: Generate unique ID
-
-## 🚀 Cách chạy
-
-```bash
-# Di chuyển vào thư mục dự án
-cd smart_travel_app
-
-# Cài đặt dependencies
-flutter pub get
-
-# Chạy ứng dụng
-flutter run
-
-# Build APK
-flutter build apk
-```
-
-## 📱 Hướng dẫn sử dụng
-
-1. **Tạo chuyến đi mới**
-   - Nhấn nút "Tạo chuyến đi" ở màn hình chính
-   - Nhập địa điểm (VD: Đà Nẵng)
-   - Chọn số ngày (1-14 ngày)
-   - Chọn ngày bắt đầu
-   - Nhấn "Tạo lịch trình tự động"
-
-2. **Xem lịch trình**
-   - Chọn chuyến đi từ danh sách
-   - Chọn ngày muốn xem
-   - Scroll để xem các hoạt động
-
-3. **Chỉnh sửa lịch trình**
-   - **Thêm**: Nhấn nút + → Chọn tab Vui chơi/Ăn uống → Chọn địa điểm
-   - **Sửa**: Tap vào card activity → Sửa thông tin → Lưu
-   - **Xóa**: Swipe left trên card → Xác nhận xóa
-
-4. **Xem chi phí**
-   - Chi phí ngày: Hiển thị ở đầu timeline
-   - Tổng chi phí: Hiển thị ở màn hình chính và timeline
-
-## 📊 Dữ liệu mẫu
-
-### Places (Vui chơi)
-- Bãi biển Mỹ Khê
-- Cầu Rồng
-- Bà Nà Hills
-- Hội An Ancient Town
-- Ngũ Hành Sơn
-- Bảo tàng Chăm
-- Bán đảo Sơn Trà
-- Asia Park
-
-### Foods (Ăn uống)
-- Bà Dưỡng - Mì Quảng
-- Bún Chả Cá 1297
-- Nhà hàng Bé Mặn
-- Cafe Cộng
-- Bánh Tráng Cuốn Thịt Heo
-- Nhà hàng Madame Lân
-- Bún Bò Huế Hải
-- Quán Ốc Oanh
-- Highlands Coffee
-- Cơm Gà Bà Nga
+- [Phase 4 - Ticket Management](PHASE4_TICKET_MANAGEMENT.md) - Tài liệu kỹ thuật
+- [Usage Guide](USAGE_GUIDE.md) - Hướng dẫn sử dụng
+- [Checklist](PHASE4_CHECKLIST.md) - Danh sách tính năng
 
 ## 🎯 Roadmap
 
-### Phase 2 - SMART (Chưa làm)
-- [ ] Gợi ý địa điểm gần nhau (dựa trên lat/lng)
-- [ ] AI gợi ý lịch trình thông minh hơn
-- [ ] Chia tiền nhóm
+### Phase 4 ✅ (Hoàn thành)
+- [x] Quản lý vé
+- [x] Upload ảnh vé
+- [x] Liên kết với lịch trình
+- [x] Link đặt vé
 
-### Phase 3 - MAP (Chưa làm)
-- [ ] Hiển thị bản đồ
-- [ ] Tối ưu route
+### Phase 5 (Kế hoạch)
+- [ ] Quét QR code/barcode
+- [ ] Nhắc nhở trước giờ khởi hành
+- [ ] Xuất vé ra PDF
+- [ ] Chia sẻ vé cho thành viên
 
-### Phase 4 - QUẢN LÝ VÉ (Chưa làm)
-- [ ] Lưu vé
-- [ ] Upload ảnh vé
-- [ ] Xem lại vé
+### Phase 6 (Tương lai)
+- [ ] Đồng bộ với Google Calendar
+- [ ] Backup/restore dữ liệu
+- [ ] Import vé từ email
+- [ ] Dark mode
+- [ ] Multi-language support
 
-## 🔧 Kỹ thuật
+## 🤝 Đóng góp
 
-- **Framework**: Flutter 3.41.6
-- **Language**: Dart 3.11.4
-- **State Management**: setState (simple)
-- **Data Storage**: JSON local (offline)
-- **UI Pattern**: Material Design 3
+Mọi đóng góp đều được chào đón! Vui lòng:
 
-## 📝 Ghi chú
+1. Fork repository
+2. Tạo branch mới (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Mở Pull Request
 
-- Dữ liệu được tách riêng hoàn toàn: Place và FoodPlace
-- Mỗi địa điểm có tags để dễ filter
-- Chi phí tự động tính từ avg_cost
-- Không cần backend, chạy hoàn toàn offline
-- Code đơn giản, dễ hiểu, dễ mở rộng
+## 📝 License
 
-## 🎨 UI/UX
+Dự án này được phân phối dưới giấy phép MIT. Xem file `LICENSE` để biết thêm chi tiết.
 
-- Timeline kiểu TikTok (scroll dọc)
-- Card design hiện đại
-- Icon phân biệt rõ ràng (Food/Place)
-- Màu sắc: Orange cho Food, Blue cho Place
-- Swipe to delete
-- Tap to edit
-- Material Design 3
+## 👥 Tác giả
 
-## 👨‍💻 Phát triển tiếp
+- **Tiến** - [tienphse181722](https://github.com/tienphse181722)
 
-Để thêm địa điểm mới, chỉnh sửa file:
-- `assets/data/places.json` - Địa điểm vui chơi
-- `assets/data/foods.json` - Địa điểm ăn uống
+## 🙏 Cảm ơn
 
-Format:
-```json
-{
-  "id": "unique_id",
-  "name": "Tên địa điểm",
-  "lat": 16.0544,
-  "lng": 108.2425,
-  "tags": ["tag1", "tag2"],
-  "avg_cost": 50000
-}
-```
+- [Flutter](https://flutter.dev/) - Framework tuyệt vời
+- [OpenStreetMap](https://www.openstreetmap.org/) - Dữ liệu bản đồ
+- [OSRM](http://project-osrm.org/) - Routing service
+- Cộng đồng Flutter Việt Nam
 
-## 📄 License
+## 📞 Liên hệ
 
-MIT License - Free to use
+- GitHub: [@tienphse181722](https://github.com/tienphse181722)
+- Email: tienphse181722@fpt.edu.vn
+
+---
+
+⭐ Nếu bạn thấy dự án hữu ích, hãy cho một star nhé!
