@@ -7,7 +7,12 @@ import '../../data/models/food_place.dart';
 import '../../data/services/data_service.dart';
 
 class AddActivityScreen extends StatefulWidget {
-  const AddActivityScreen({super.key});
+  final String provinceName;
+  
+  const AddActivityScreen({
+    super.key,
+    required this.provinceName,
+  });
 
   @override
   State<AddActivityScreen> createState() => _AddActivityScreenState();
@@ -51,18 +56,33 @@ class _AddActivityScreenState extends State<AddActivityScreen>
     setState(() => _isLoading = true);
 
     try {
-      final places = await DataService.loadPlaces();
-      final foodPlaces = await DataService.loadFoodPlaces();
-      final placeTags = await DataService.getPlaceTags();
-      final foodTags = await DataService.getFoodTags();
+      // Load only places and foods from the selected province
+      final data = await DataService.getAllPlacesAndFoodsByProvince(widget.provinceName);
+      
+      final places = data['places'] as List<Place>;
+      final foodPlaces = data['foods'] as List<FoodPlace>;
+      
+      // Extract unique tags
+      final Set<String> placeTagsSet = {};
+      final Set<String> foodTagsSet = {};
+      
+      for (var place in places) {
+        placeTagsSet.addAll(place.tags);
+      }
+      
+      for (var food in foodPlaces) {
+        foodTagsSet.addAll(food.tags);
+      }
 
       setState(() {
         _places = places;
         _foodPlaces = foodPlaces;
-        _placeTags = placeTags;
-        _foodTags = foodTags;
+        _placeTags = placeTagsSet.toList()..sort();
+        _foodTags = foodTagsSet.toList()..sort();
         _isLoading = false;
       });
+      
+      print('✅ Loaded ${places.length} places and ${foodPlaces.length} foods from ${widget.provinceName}');
     } catch (e) {
       setState(() => _isLoading = false);
       if (mounted) {

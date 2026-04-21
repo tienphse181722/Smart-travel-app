@@ -108,7 +108,7 @@ class ItineraryService {
     );
   }
 
-  // Generate activities thông minh cho 1 ngày
+  // Generate activities thông minh cho 1 ngày (5-6 hoạt động)
   static List<Activity> _generateSmartDayActivities({
     required List<Place> places,
     required List<FoodPlace> foodPlaces,
@@ -125,48 +125,70 @@ class ItineraryService {
         ? previousDayActivities!.last
         : null;
 
-    // Sáng: Place (8:00 - 11:00)
-    final morningPlace = _selectSmartPlace(
+    // Sáng sớm: Place (7:00 - 9:00) - Địa điểm thiên nhiên, biển, núi
+    final earlyMorningPlace = _selectSmartPlace(
       places: places,
       usedIds: usedPlaceIds,
-      preferredTags: ['biển', 'núi', 'thiên nhiên', 'check-in'],
+      preferredTags: ['hot_trend', 'bien', 'nui_non', 'thien_nhien', 'check_in'],
       lastLocation: lastActivity,
       random: random,
     );
-    activities.add(_createActivityFromPlace(morningPlace, '08:00'));
+    activities.add(_createActivityFromPlace(earlyMorningPlace, '07:00'));
+    usedPlaceIds.add(earlyMorningPlace.id);
+
+    // Sáng: Place (9:30 - 11:30) - Văn hóa, lịch sử
+    final morningPlace = _selectSmartPlace(
+      places: places,
+      usedIds: usedPlaceIds,
+      preferredTags: ['van_hoa', 'lich_su', 'tam_linh', 'di_san_the_gioi'],
+      lastLocation: activities.last,
+      random: random,
+    );
+    activities.add(_createActivityFromPlace(morningPlace, '09:30'));
     usedPlaceIds.add(morningPlace.id);
 
-    // Trưa: Food gần với địa điểm sáng (12:00 - 13:30)
+    // Trưa: Food (12:00 - 13:30) - Đặc sản địa phương
     final lunchFood = _selectSmartFood(
       foodPlaces: foodPlaces,
       usedIds: usedFoodIds,
-      preferredTags: ['đặc sản', 'bình dân', 'hải sản'],
+      preferredTags: ['dac_san', 'hot_trend', 'truyen_thong'],
       nearLocation: activities.last,
       random: random,
     );
     activities.add(_createActivityFromFood(lunchFood, '12:00'));
     usedFoodIds.add(lunchFood.id);
 
-    // Chiều: Place gần với địa điểm trưa (14:00 - 17:00)
+    // Chiều: Place (14:00 - 16:00) - Vui chơi, mua sắm
     final afternoonPlace = _selectSmartPlace(
       places: places,
       usedIds: usedPlaceIds,
-      preferredTags: ['văn hóa', 'check-in', 'vui chơi'],
+      preferredTags: ['vui_choi', 'mua_sam', 'check_in'],
       lastLocation: activities.last,
       random: random,
     );
     activities.add(_createActivityFromPlace(afternoonPlace, '14:00'));
     usedPlaceIds.add(afternoonPlace.id);
 
-    // Tối: Food gần với địa điểm chiều (18:00 - 20:00)
+    // Chiều muộn: Place (16:30 - 18:30) - Check-in, view đẹp
+    final lateAfternoonPlace = _selectSmartPlace(
+      places: places,
+      usedIds: usedPlaceIds,
+      preferredTags: ['check_in', 'view_dep', 'hoang_hon'],
+      lastLocation: activities.last,
+      random: random,
+    );
+    activities.add(_createActivityFromPlace(lateAfternoonPlace, '16:30'));
+    usedPlaceIds.add(lateAfternoonPlace.id);
+
+    // Tối: Food (19:00 - 21:00) - Ẩm thực đêm, cafe
     final dinnerFood = _selectSmartFood(
       foodPlaces: foodPlaces,
       usedIds: usedFoodIds,
-      preferredTags: ['cao cấp', 'nhậu', 'cafe'],
+      preferredTags: ['buoi_toi', 'nightlife', 'cafe', 'street_food'],
       nearLocation: activities.last,
       random: random,
     );
-    activities.add(_createActivityFromFood(dinnerFood, '18:00'));
+    activities.add(_createActivityFromFood(dinnerFood, '19:00'));
     usedFoodIds.add(dinnerFood.id);
 
     return activities;
@@ -284,6 +306,11 @@ class ItineraryService {
       lng: place.lng,
       tags: place.tags,
       originalId: place.id,
+      description: place.description,
+      address: place.address,
+      rating: place.rating,
+      priceRange: place.priceRange,
+      openHours: place.openHours,
     );
   }
 
@@ -299,6 +326,11 @@ class ItineraryService {
       lng: food.lng,
       tags: food.tags,
       originalId: food.id,
+      description: food.description,
+      address: food.address,
+      rating: food.rating,
+      priceRange: food.priceRange,
+      openHours: food.openHours,
     );
   }
 

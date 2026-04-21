@@ -221,6 +221,102 @@ class DataService {
     return suggestions;
   }
 
+  // NEW: Get all places and foods for a specific province (for "Add Activity" screen)
+  static Future<Map<String, dynamic>> getAllPlacesAndFoodsByProvince(String provinceName) async {
+    final region = detectRegion(provinceName);
+    final regionData = await loadRegionData(region);
+    final provinces = regionData['provinces'] as List;
+    
+    final normalizedInput = normalizeVietnamese(provinceName.toLowerCase());
+    final province = provinces.firstWhere(
+      (p) {
+        final provinceName = p['name'] as String;
+        final cityName = p['city'] as String?;
+        final searchTerms = p['search_terms'] as List?;
+        
+        final normalizedProvince = normalizeVietnamese(provinceName.toLowerCase());
+        final normalizedCity = cityName != null ? normalizeVietnamese(cityName.toLowerCase()) : '';
+        
+        if (normalizedProvince == normalizedInput ||
+            normalizedProvince.contains(normalizedInput) ||
+            normalizedInput.contains(normalizedProvince)) {
+          return true;
+        }
+        
+        if (cityName != null && (normalizedCity == normalizedInput ||
+            normalizedCity.contains(normalizedInput) ||
+            normalizedInput.contains(normalizedCity))) {
+          return true;
+        }
+        
+        if (searchTerms != null) {
+          for (var term in searchTerms) {
+            final normalizedTerm = normalizeVietnamese(term.toString().toLowerCase());
+            if (normalizedTerm == normalizedInput ||
+                normalizedTerm.contains(normalizedInput) ||
+                normalizedInput.contains(normalizedTerm)) {
+              return true;
+            }
+          }
+        }
+        
+        return false;
+      },
+      orElse: () => null,
+    );
+    
+    if (province == null) {
+      return {'places': [], 'foods': []};
+    }
+    
+    final placesJson = province['places'] as List;
+    
+    // Separate places and foods
+    final places = placesJson
+        .where((p) => p['category'] != 'an_uong')
+        .map((p) => Place.fromJson(p))
+        .toList();
+    
+    final foods = placesJson
+        .where((p) => p['category'] == 'an_uong')
+        .map((p) => FoodPlace.fromJson(p))
+        .toList();
+    
+    // Sort by hot_trend and rating
+    places.sort((a, b) {
+      final aHasHotTrend = a.tags.contains('hot_trend');
+      final bHasHotTrend = b.tags.contains('hot_trend');
+      if (aHasHotTrend && !bHasHotTrend) return -1;
+      if (!aHasHotTrend && bHasHotTrend) return 1;
+      
+      if (a.rating != null && b.rating != null) {
+        return b.rating!.compareTo(a.rating!);
+      }
+      
+      return a.name.compareTo(b.name);
+    });
+    
+    foods.sort((a, b) {
+      final aHasHotTrend = a.tags.contains('hot_trend');
+      final bHasHotTrend = b.tags.contains('hot_trend');
+      if (aHasHotTrend && !bHasHotTrend) return -1;
+      if (!aHasHotTrend && bHasHotTrend) return 1;
+      
+      if (a.rating != null && b.rating != null) {
+        return b.rating!.compareTo(a.rating!);
+      }
+      
+      return a.name.compareTo(b.name);
+    });
+    
+    return {
+      'places': places,
+      'foods': foods,
+      'provinceName': province['name'],
+      'cityName': province['city'],
+    };
+  }
+
   // Load all places (for backward compatibility)
   static Future<List<Place>> loadPlaces() async {
     final List<Place> allPlaces = [];

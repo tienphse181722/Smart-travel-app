@@ -700,7 +700,9 @@ class _TripDetailScreenState extends State<TripDetailScreen>
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const AddActivityScreen(),
+        builder: (context) => AddActivityScreen(
+          provinceName: _trip.destination,
+        ),
       ),
     );
 

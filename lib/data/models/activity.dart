@@ -10,6 +10,11 @@ class Activity {
   final double lng;
   final List<String> tags;
   final String? originalId; // ID từ place hoặc food
+  final String? description;
+  final String? address;
+  final double? rating;
+  final String? priceRange;
+  final String? openHours;
 
   Activity({
     required this.id,
@@ -21,6 +26,11 @@ class Activity {
     required this.lng,
     required this.tags,
     this.originalId,
+    this.description,
+    this.address,
+    this.rating,
+    this.priceRange,
+    this.openHours,
   });
 
   Map<String, dynamic> toJson() {
@@ -34,6 +44,11 @@ class Activity {
       'lng': lng,
       'tags': tags,
       'originalId': originalId,
+      'description': description,
+      'address': address,
+      'rating': rating,
+      'priceRange': priceRange,
+      'openHours': openHours,
     };
   }
 
@@ -50,6 +65,11 @@ class Activity {
       lng: (json['lng'] as num).toDouble(),
       tags: List<String>.from(json['tags'] as List),
       originalId: json['originalId'] as String?,
+      description: json['description'] as String?,
+      address: json['address'] as String?,
+      rating: json['rating'] != null ? (json['rating'] as num).toDouble() : null,
+      priceRange: json['priceRange'] as String?,
+      openHours: json['openHours'] as String?,
     );
   }
 
@@ -63,6 +83,11 @@ class Activity {
     double? lng,
     List<String>? tags,
     String? originalId,
+    String? description,
+    String? address,
+    double? rating,
+    String? priceRange,
+    String? openHours,
   }) {
     return Activity(
       id: id ?? this.id,
@@ -74,6 +99,11 @@ class Activity {
       lng: lng ?? this.lng,
       tags: tags ?? this.tags,
       originalId: originalId ?? this.originalId,
+      description: description ?? this.description,
+      address: address ?? this.address,
+      rating: rating ?? this.rating,
+      priceRange: priceRange ?? this.priceRange,
+      openHours: openHours ?? this.openHours,
     );
   }
 }
