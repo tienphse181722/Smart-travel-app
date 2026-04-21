@@ -2,9 +2,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import '../models/ticket.dart';
-import '../models/activity.dart';
-import '../services/ticket_service.dart';
+import '../../data/models/ticket.dart';
+import '../../data/models/activity.dart';
+import '../../data/services/ticket_service.dart';
 import 'add_ticket_screen_v2.dart';
 
 class TicketDetailScreenV2 extends StatefulWidget {

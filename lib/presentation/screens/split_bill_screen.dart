@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
-import '../models/trip.dart';
-import '../models/member.dart';
-import '../models/expense.dart';
-import '../services/split_bill_service.dart';
+import '../../data/models/trip.dart';
+import '../../data/models/member.dart';
+import '../../data/models/expense.dart';
+import '../../data/services/split_bill_service.dart';
 import 'add_expense_screen.dart';
 
 class SplitBillScreen extends StatefulWidget {

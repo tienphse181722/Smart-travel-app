@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/ticket.dart';
+import '../../data/models/ticket.dart';
 
 class TicketCardV2 extends StatelessWidget {
   final Ticket ticket;

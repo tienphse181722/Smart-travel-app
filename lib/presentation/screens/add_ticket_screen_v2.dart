@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
-import '../models/ticket.dart';
-import '../models/activity.dart';
-import '../services/ticket_service.dart';
+import '../../data/models/ticket.dart';
+import '../../data/models/activity.dart';
+import '../../data/services/ticket_service.dart';
 
 class AddTicketScreenV2 extends StatefulWidget {
   final String tripId;
@@ -421,7 +421,7 @@ class _AddTicketScreenV2State extends State<AddTicketScreenV2> {
 
             // Status
             DropdownButtonFormField<TicketStatus>(
-              value: _selectedStatus,
+              initialValue: _selectedStatus,
               decoration: const InputDecoration(
                 labelText: 'Trạng thái',
                 prefixIcon: Icon(Icons.info_outline),
@@ -453,7 +453,7 @@ class _AddTicketScreenV2State extends State<AddTicketScreenV2> {
             // Link activity
             if (widget.activities != null && widget.activities!.isNotEmpty) ...[
               DropdownButtonFormField<String>(
-                value: _selectedActivityId,
+                initialValue: _selectedActivityId,
                 decoration: const InputDecoration(
                   labelText: 'Liên kết với hoạt động (tùy chọn)',
                   prefixIcon: Icon(Icons.link),

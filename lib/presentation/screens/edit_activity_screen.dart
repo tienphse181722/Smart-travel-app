@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../models/activity.dart';
+import '../../data/models/activity.dart';
 
 class EditActivityScreen extends StatefulWidget {
   final Activity activity;

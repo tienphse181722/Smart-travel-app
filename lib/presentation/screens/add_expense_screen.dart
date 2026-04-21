@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import '../models/member.dart';
-import '../models/expense.dart';
-import '../models/activity.dart';
+import '../../data/models/member.dart';
+import '../../data/models/expense.dart';
+import '../../data/models/activity.dart';
 
 class AddExpenseScreen extends StatefulWidget {
   final List<Member> members;
@@ -122,7 +122,7 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
 
             // Payer
             DropdownButtonFormField<String>(
-              value: _selectedPayer,
+              initialValue: _selectedPayer,
               decoration: const InputDecoration(
                 labelText: 'Người trả *',
                 prefixIcon: Icon(Icons.person),
@@ -150,7 +150,7 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
             // Link to activity (optional)
             if (widget.activities != null && widget.activities!.isNotEmpty) ...[
               DropdownButtonFormField<String>(
-                value: _selectedActivityId,
+                initialValue: _selectedActivityId,
                 decoration: const InputDecoration(
                   labelText: 'Liên kết với hoạt động (tùy chọn)',
                   prefixIcon: Icon(Icons.link),

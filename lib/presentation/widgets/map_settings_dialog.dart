@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../services/cache_service.dart';
-import '../services/search_service.dart';
+import '../../data/services/cache_service.dart';
+import '../../data/services/search_service.dart';
 
 class MapSettingsDialog extends StatefulWidget {
   const MapSettingsDialog({super.key});

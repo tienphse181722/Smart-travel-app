@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../models/ticket.dart';
-import '../models/activity.dart';
-import '../services/ticket_service.dart';
+import '../../data/models/ticket.dart';
+import '../../data/models/activity.dart';
+import '../../data/services/ticket_service.dart';
 import '../widgets/ticket_card_v2.dart';
 import 'add_ticket_screen_v2.dart';
 import 'ticket_detail_screen_v2.dart';

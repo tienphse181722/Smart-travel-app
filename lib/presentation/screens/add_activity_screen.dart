@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
-import '../models/activity.dart';
-import '../models/place.dart';
-import '../models/food_place.dart';
-import '../services/data_service.dart';
+import '../../data/models/activity.dart';
+import '../../data/models/place.dart';
+import '../../data/models/food_place.dart';
+import '../../data/services/data_service.dart';
 
 class AddActivityScreen extends StatefulWidget {
   const AddActivityScreen({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/activity.dart';
-import '../models/place.dart';
-import '../models/food_place.dart';
-import '../services/itinerary_service.dart';
+import '../../data/models/activity.dart';
+import '../../data/models/place.dart';
+import '../../data/models/food_place.dart';
+import '../../data/services/itinerary_service.dart';
 
 class NearbyPlacesScreen extends StatefulWidget {
   final Activity activity;

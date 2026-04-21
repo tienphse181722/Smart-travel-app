@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../models/trip.dart';
-import '../models/activity.dart';
+import '../../data/models/trip.dart';
+import '../../data/models/activity.dart';
 import 'edit_activity_screen.dart';
 import 'add_activity_screen.dart';
 import 'split_bill_screen.dart';

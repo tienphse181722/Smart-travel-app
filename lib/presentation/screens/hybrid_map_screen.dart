@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'dart:async';
-import '../models/activity.dart';
-import '../services/osrm_service.dart';
-import '../services/search_service.dart';
-import '../services/route_optimizer_service.dart';
+import '../../data/models/activity.dart';
+import '../../data/services/osrm_service.dart';
+import '../../data/services/search_service.dart';
+import '../../data/services/route_optimizer_service.dart';
 
 class HybridMapScreen extends StatefulWidget {
   final List<Activity> activities;
