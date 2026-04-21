@@ -1,0 +1,82 @@
+[
+  {
+    "id": "f1",
+    "name": "Bà Dưỡng - Mì Quảng",
+    "lat": 16.0678,
+    "lng": 108.2210,
+    "tags": ["mì quảng", "đặc sản", "bình dân"],
+    "avg_cost": 35000
+  },
+  {
+    "id": "f2",
+    "name": "Bún Chả Cá 1297",
+    "lat": 16.0544,
+    "lng": 108.2380,
+    "tags": ["bún chả cá", "hải sản", "đặc sản"],
+    "avg_cost": 40000
+  },
+  {
+    "id": "f3",
+    "name": "Nhà hàng Bé Mặn",
+    "lat": 16.0608,
+    "lng": 108.2250,
+    "tags": ["hải sản", "cao cấp", "view đẹp"],
+    "avg_cost": 300000
+  },
+  {
+    "id": "f4",
+    "name": "Cafe Cộng",
+    "lat": 16.0700,
+    "lng": 108.2200,
+    "tags": ["cafe", "vintage", "check-in"],
+    "avg_cost": 50000
+  },
+  {
+    "id": "f5",
+    "name": "Bánh Tráng Cuốn Thịt Heo",
+    "lat": 16.0650,
+    "lng": 108.2180,
+    "tags": ["đặc sản", "bình dân", "ăn vặt"],
+    "avg_cost": 30000
+  },
+  {
+    "id": "f6",
+    "name": "Nhà hàng Madame Lân",
+    "lat": 16.0580,
+    "lng": 108.2420,
+    "tags": ["cao cấp", "fusion", "view biển"],
+    "avg_cost": 500000
+  },
+  {
+    "id": "f7",
+    "name": "Bún Bò Huế Hải",
+    "lat": 16.0620,
+    "lng": 108.2190,
+    "tags": ["bún bò", "đặc sản", "bình dân"],
+    "avg_cost": 35000
+  },
+  {
+    "id": "f8",
+    "name": "Quán Ốc Oanh",
+    "lat": 16.0560,
+    "lng": 108.2300,
+    "tags": ["hải sản", "ốc", "nhậu"],
+    "avg_cost": 150000
+  },
+  {
+    "id": "f9",
+    "name": "Highlands Coffee",
+    "lat": 16.0640,
+    "lng": 108.2220,
+    "tags": ["cafe", "chuỗi", "làm việc"],
+    "avg_cost": 60000
+  },
+  {
+    "id": "f10",
+    "name": "Cơm Gà Bà Nga",
+    "lat": 15.8820,
+    "lng": 108.3350,
+    "tags": ["cơm gà", "đặc sản", "Hội An"],
+    "avg_cost": 40000
+  }
+]

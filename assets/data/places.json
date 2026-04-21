@@ -1,0 +1,66 @@
+[
+  {
+    "id": "p1",
+    "name": "Bãi biển Mỹ Khê",
+    "lat": 16.0544,
+    "lng": 108.2425,
+    "tags": ["biển", "check-in", "thư giãn"],
+    "avg_cost": 50000
+  },
+  {
+    "id": "p2",
+    "name": "Cầu Rồng",
+    "lat": 16.0608,
+    "lng": 108.2270,
+    "tags": ["check-in", "landmark", "đêm"],
+    "avg_cost": 0
+  },
+  {
+    "id": "p3",
+    "name": "Bà Nà Hills",
+    "lat": 15.9959,
+    "lng": 107.9953,
+    "tags": ["núi", "check-in", "cáp treo"],
+    "avg_cost": 750000
+  },
+  {
+    "id": "p4",
+    "name": "Hội An Ancient Town",
+    "lat": 15.8801,
+    "lng": 108.3380,
+    "tags": ["văn hóa", "check-in", "phố cổ"],
+    "avg_cost": 120000
+  },
+  {
+    "id": "p5",
+    "name": "Ngũ Hành Sơn",
+    "lat": 16.0042,
+    "lng": 108.2625,
+    "tags": ["núi", "chùa", "văn hóa"],
+    "avg_cost": 40000
+  },
+  {
+    "id": "p6",
+    "name": "Bảo tàng Chăm",
+    "lat": 16.0678,
+    "lng": 108.2228,
+    "tags": ["văn hóa", "bảo tàng", "lịch sử"],
+    "avg_cost": 30000
+  },
+  {
+    "id": "p7",
+    "name": "Bán đảo Sơn Trà",
+    "lat": 16.1089,
+    "lng": 108.2700,
+    "tags": ["biển", "núi", "thiên nhiên"],
+    "avg_cost": 0
+  },
+  {
+    "id": "p8",
+    "name": "Asia Park",
+    "lat": 16.0397,
+    "lng": 108.2253,
+    "tags": ["vui chơi", "giải trí", "gia đình"],
+    "avg_cost": 200000
+  }
+]
