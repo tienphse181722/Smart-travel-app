@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/trip.dart';
 import '../services/ticket_service.dart';
+import '../services/trip_service.dart';
 import 'create_trip_screen.dart';
 import 'trip_detail_screen.dart';
 import 'package:intl/intl.dart';
@@ -15,7 +16,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   List<Trip> trips = [];
   late AnimationController _animationController;
-  final _ticketService = TicketService();
+  final _tripService = TripService();
+  bool _isLoading = true;
 
   @override
   void initState() {
@@ -24,6 +26,32 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       vsync: this,
       duration: const Duration(milliseconds: 300),
     );
+    _loadTrips();
+  }
+
+  Future<void> _loadTrips() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      final loadedTrips = await _tripService.getTrips();
+      if (mounted) {
+        setState(() {
+          trips = loadedTrips;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Lỗi khi tải dữ liệu: $e')),
+        );
+      }
+    }
   }
 
   @override
@@ -36,15 +64,17 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildHeader(),
-            Expanded(
-              child: trips.isEmpty ? _buildEmptyState() : _buildTripList(),
-            ),
-          ],
-        ),
+        child: _isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildHeader(),
+                  Expanded(
+                    child: trips.isEmpty ? _buildEmptyState() : _buildTripList(),
+                  ),
+                ],
+              ),
       ),
       floatingActionButton: _buildFloatingButton(),
     );
@@ -321,9 +351,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     );
 
     if (result != null && result is Trip) {
-      setState(() {
-        trips.add(result);
-      });
+      await _tripService.addTrip(result);
+      _loadTrips();
       _animationController.forward(from: 0);
     }
   }
@@ -351,12 +380,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     );
 
     if (result != null && result is Trip) {
-      setState(() {
-        final index = trips.indexWhere((t) => t.id == result.id);
-        if (index != -1) {
-          trips[index] = result;
-        }
-      });
+      await _tripService.updateTrip(result);
+      _loadTrips();
     }
   }
 
@@ -388,12 +413,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
   Future<void> _deleteTrip(Trip trip) async {
     try {
-      // Delete all tickets associated with this trip
-      await _ticketService.deleteTicketsByTrip(trip.id);
-      
-      setState(() {
-        trips.removeWhere((t) => t.id == trip.id);
-      });
+      await _tripService.deleteTrip(trip.id);
+      _loadTrips();
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
