@@ -7,7 +7,7 @@ import 'add_activity_screen.dart';
 import 'split_bill_screen.dart';
 import 'nearby_places_screen.dart';
 import 'hybrid_map_screen.dart';
-import 'ticket_list_screen.dart';
+import 'ticket_list_screen_v2.dart';
 
 class TripDetailScreen extends StatefulWidget {
   final Trip trip;
@@ -795,7 +795,7 @@ class _TripDetailScreenState extends State<TripDetailScreen>
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => TicketListScreen(
+        builder: (context) => TicketListScreenV2(
           tripId: _trip.id,
           activities: allActivities,
         ),

@@ -7,12 +7,12 @@ import '../models/ticket.dart';
 import '../models/activity.dart';
 import '../services/ticket_service.dart';
 
-class AddTicketScreen extends StatefulWidget {
+class AddTicketScreenV2 extends StatefulWidget {
   final String tripId;
   final List<Activity>? activities;
   final Ticket? ticketToEdit;
 
-  const AddTicketScreen({
+  const AddTicketScreenV2({
     super.key,
     required this.tripId,
     this.activities,
@@ -20,19 +20,22 @@ class AddTicketScreen extends StatefulWidget {
   });
 
   @override
-  State<AddTicketScreen> createState() => _AddTicketScreenState();
+  State<AddTicketScreenV2> createState() => _AddTicketScreenV2State();
 }
 
-class _AddTicketScreenState extends State<AddTicketScreen> {
+class _AddTicketScreenV2State extends State<AddTicketScreenV2> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
-  final _ticketCodeController = TextEditingController();
-  final _bookingUrlController = TextEditingController();
+  final _codeController = TextEditingController();
+  final _fromController = TextEditingController();
+  final _toController = TextEditingController();
   final _notesController = TextEditingController();
   final _ticketService = TicketService();
   final _imagePicker = ImagePicker();
 
-  DateTime _selectedDate = DateTime.now();
+  TicketType _selectedType = TicketType.bus;
+  DateTime _selectedDatetime = DateTime.now();
+  TicketStatus _selectedStatus = TicketStatus.notBooked;
   File? _selectedImage;
   String? _existingImagePath;
   String? _selectedActivityId;
@@ -49,19 +52,23 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
   void _loadTicketData() {
     final ticket = widget.ticketToEdit!;
     _nameController.text = ticket.name;
-    _ticketCodeController.text = ticket.ticketCode;
-    _bookingUrlController.text = ticket.bookingUrl ?? '';
+    _codeController.text = ticket.code;
+    _fromController.text = ticket.from ?? '';
+    _toController.text = ticket.to ?? '';
     _notesController.text = ticket.notes ?? '';
-    _selectedDate = ticket.date;
+    _selectedType = ticket.type;
+    _selectedDatetime = ticket.datetime;
+    _selectedStatus = ticket.status;
     _existingImagePath = ticket.imagePath;
-    _selectedActivityId = ticket.activityId;
+    _selectedActivityId = ticket.linkedActivityId;
   }
 
   @override
   void dispose() {
     _nameController.dispose();
-    _ticketCodeController.dispose();
-    _bookingUrlController.dispose();
+    _codeController.dispose();
+    _fromController.dispose();
+    _toController.dispose();
     _notesController.dispose();
     super.dispose();
   }
@@ -78,7 +85,7 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
       if (image != null) {
         setState(() {
           _selectedImage = File(image.path);
-          _existingImagePath = null; // Clear existing image if new one is selected
+          _existingImagePath = null;
         });
       }
     } catch (e) {
@@ -154,18 +161,44 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
     );
   }
 
-  Future<void> _selectDate() async {
-    final DateTime? picked = await showDatePicker(
+  Future<void> _selectDatetime() async {
+    final DateTime? pickedDate = await showDatePicker(
       context: context,
-      initialDate: _selectedDate,
+      initialDate: _selectedDatetime,
       firstDate: DateTime(2000),
       lastDate: DateTime(2100),
     );
 
-    if (picked != null && picked != _selectedDate) {
-      setState(() {
-        _selectedDate = picked;
-      });
+    if (pickedDate != null && mounted) {
+      final TimeOfDay? pickedTime = await showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.fromDateTime(_selectedDatetime),
+      );
+
+      if (pickedTime != null) {
+        setState(() {
+          _selectedDatetime = DateTime(
+            pickedDate.year,
+            pickedDate.month,
+            pickedDate.day,
+            pickedTime.hour,
+            pickedTime.minute,
+          );
+        });
+      }
+    }
+  }
+
+  IconData _getTypeIcon(TicketType type) {
+    switch (type) {
+      case TicketType.bus:
+        return Icons.directions_bus;
+      case TicketType.train:
+        return Icons.train;
+      case TicketType.flight:
+        return Icons.flight;
+      case TicketType.hotel:
+        return Icons.hotel;
     }
   }
 
@@ -182,9 +215,7 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
       final ticketId = widget.ticketToEdit?.id ?? const Uuid().v4();
       String? imagePath = _existingImagePath;
 
-      // Save new image if selected
       if (_selectedImage != null) {
-        // Delete old image if editing
         if (_existingImagePath != null) {
           await _ticketService.deleteTicketImage(_existingImagePath!);
         }
@@ -193,18 +224,17 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
 
       final ticket = Ticket(
         id: ticketId,
+        type: _selectedType,
         name: _nameController.text.trim(),
-        date: _selectedDate,
-        ticketCode: _ticketCodeController.text.trim(),
+        datetime: _selectedDatetime,
+        code: _codeController.text.trim(),
+        from: _fromController.text.trim().isEmpty ? null : _fromController.text.trim(),
+        to: _toController.text.trim().isEmpty ? null : _toController.text.trim(),
         imagePath: imagePath,
-        bookingUrl: _bookingUrlController.text.trim().isEmpty
-            ? null
-            : _bookingUrlController.text.trim(),
-        notes: _notesController.text.trim().isEmpty
-            ? null
-            : _notesController.text.trim(),
+        status: _selectedStatus,
+        notes: _notesController.text.trim().isEmpty ? null : _notesController.text.trim(),
         tripId: widget.tripId,
-        activityId: _selectedActivityId,
+        linkedActivityId: _selectedActivityId,
       );
 
       if (widget.ticketToEdit != null) {
@@ -255,38 +285,59 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
                 child: _selectedImage != null
                     ? ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: Image.file(
-                          _selectedImage!,
-                          fit: BoxFit.cover,
-                        ),
+                        child: Image.file(_selectedImage!, fit: BoxFit.cover),
                       )
                     : _existingImagePath != null
                         ? ClipRRect(
                             borderRadius: BorderRadius.circular(16),
-                            child: Image.file(
-                              File(_existingImagePath!),
-                              fit: BoxFit.cover,
-                            ),
+                            child: Image.file(File(_existingImagePath!), fit: BoxFit.cover),
                           )
                         : Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
-                                Icons.add_photo_alternate,
-                                size: 64,
-                                color: Colors.grey.shade400,
-                              ),
+                              Icon(Icons.add_photo_alternate, size: 64, color: Colors.grey.shade400),
                               const SizedBox(height: 8),
-                              Text(
-                                'Thêm ảnh vé',
-                                style: TextStyle(
-                                  color: Colors.grey.shade600,
-                                  fontSize: 16,
-                                ),
-                              ),
+                              Text('Thêm ảnh vé', style: TextStyle(color: Colors.grey.shade600, fontSize: 16)),
                             ],
                           ),
               ),
+            ),
+            const SizedBox(height: 24),
+
+            // Ticket type
+            const Text('Loại vé *', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              children: TicketType.values.map((type) {
+                final isSelected = _selectedType == type;
+                return ChoiceChip(
+                  label: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(_getTypeIcon(type), size: 18),
+                      const SizedBox(width: 8),
+                      Text(Ticket(
+                        id: '',
+                        type: type,
+                        name: '',
+                        datetime: DateTime.now(),
+                        code: '',
+                        tripId: '',
+                      ).typeDisplayName),
+                    ],
+                  ),
+                  selected: isSelected,
+                  onSelected: (selected) {
+                    if (selected) {
+                      setState(() {
+                        _selectedType = type;
+                      });
+                    }
+                  },
+                );
+              }).toList(),
             ),
             const SizedBox(height: 24),
 
@@ -295,7 +346,7 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
               controller: _nameController,
               decoration: const InputDecoration(
                 labelText: 'Tên vé *',
-                hintText: 'VD: Vé máy bay Hà Nội - Đà Nẵng',
+                hintText: 'VD: Vé xe Hà Nội - Đà Nẵng',
                 prefixIcon: Icon(Icons.confirmation_number),
               ),
               validator: (value) {
@@ -307,28 +358,56 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
             ),
             const SizedBox(height: 16),
 
-            // Date
+            // From - To
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: _fromController,
+                    decoration: const InputDecoration(
+                      labelText: 'Điểm đi',
+                      hintText: 'Hà Nội',
+                      prefixIcon: Icon(Icons.location_on),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: TextFormField(
+                    controller: _toController,
+                    decoration: const InputDecoration(
+                      labelText: 'Điểm đến',
+                      hintText: 'Đà Nẵng',
+                      prefixIcon: Icon(Icons.location_on_outlined),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+            // Datetime
             InkWell(
-              onTap: _selectDate,
+              onTap: _selectDatetime,
               child: InputDecorator(
                 decoration: const InputDecoration(
                   labelText: 'Ngày giờ *',
                   prefixIcon: Icon(Icons.calendar_today),
                 ),
                 child: Text(
-                  DateFormat('dd/MM/yyyy').format(_selectedDate),
+                  DateFormat('dd/MM/yyyy HH:mm').format(_selectedDatetime),
                   style: const TextStyle(fontSize: 16),
                 ),
               ),
             ),
             const SizedBox(height: 16),
 
-            // Ticket code
+            // Code
             TextFormField(
-              controller: _ticketCodeController,
+              controller: _codeController,
               decoration: const InputDecoration(
                 labelText: 'Mã vé *',
-                hintText: 'VD: ABC123456',
+                hintText: 'ABC123456',
                 prefixIcon: Icon(Icons.qr_code),
               ),
               validator: (value) {
@@ -340,7 +419,38 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
             ),
             const SizedBox(height: 16),
 
-            // Link activity (optional)
+            // Status
+            DropdownButtonFormField<TicketStatus>(
+              value: _selectedStatus,
+              decoration: const InputDecoration(
+                labelText: 'Trạng thái',
+                prefixIcon: Icon(Icons.info_outline),
+              ),
+              items: TicketStatus.values.map((status) {
+                return DropdownMenuItem(
+                  value: status,
+                  child: Text(Ticket(
+                    id: '',
+                    type: TicketType.bus,
+                    name: '',
+                    datetime: DateTime.now(),
+                    code: '',
+                    tripId: '',
+                    status: status,
+                  ).statusDisplayName),
+                );
+              }).toList(),
+              onChanged: (value) {
+                if (value != null) {
+                  setState(() {
+                    _selectedStatus = value;
+                  });
+                }
+              },
+            ),
+            const SizedBox(height: 16),
+
+            // Link activity
             if (widget.activities != null && widget.activities!.isNotEmpty) ...[
               DropdownButtonFormField<String>(
                 value: _selectedActivityId,
@@ -367,18 +477,6 @@ class _AddTicketScreenState extends State<AddTicketScreen> {
               ),
               const SizedBox(height: 16),
             ],
-
-            // Booking URL (optional)
-            TextFormField(
-              controller: _bookingUrlController,
-              decoration: const InputDecoration(
-                labelText: 'Link đặt vé/khách sạn (tùy chọn)',
-                hintText: 'https://...',
-                prefixIcon: Icon(Icons.link),
-              ),
-              keyboardType: TextInputType.url,
-            ),
-            const SizedBox(height: 16),
 
             // Notes
             TextFormField(

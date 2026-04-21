@@ -29,7 +29,7 @@ class TicketService {
   // Lấy vé theo activity
   Future<List<Ticket>> getTicketsByActivity(String activityId) async {
     final tickets = await getTickets();
-    return tickets.where((ticket) => ticket.activityId == activityId).toList();
+    return tickets.where((ticket) => ticket.linkedActivityId == activityId).toList();
   }
 
   // Lấy vé theo ID
