@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../models/trip.dart';
-import '../services/ticket_service.dart';
 import '../services/trip_service.dart';
 import 'create_trip_screen.dart';
 import 'trip_detail_screen.dart';
