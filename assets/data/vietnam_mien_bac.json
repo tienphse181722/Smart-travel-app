@@ -1,0 +1,1731 @@
+{
+  "region": "Miền Bắc",
+  "description": "Các tỉnh thành miền Bắc Việt Nam",
+  "total_provinces": 25,
+  "provinces": [
+    {
+      "id": 1,
+      "code": "HN",
+      "name": "Hà Nội",
+      "type": "Thành phố trực thuộc TW",
+      "coordinates": {
+        "lat": 21.0285,
+        "lng": 105.8542
+      },
+      "places": [
+        {
+          "id": "HN001",
+          "name": "Hồ Hoàn Kiếm & Phố đi bộ Hồ Gươm",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "buoi_toi"
+          ],
+          "address": "Đinh Tiên Hoàng, Hoàn Kiếm, Hà Nội",
+          "coordinates": {
+            "lat": 21.0285,
+            "lng": 105.8542
+          },
+          "description": "Trung tâm văn hóa lịch sử Hà Nội, phố đi bộ cuối tuần sầm uất",
+          "open_hours": "24/7 (phố đi bộ: T6-CN)",
+          "price_range": "Miễn phí",
+          "rating": 4.7
+        },
+        {
+          "id": "HN002",
+          "name": "Cà phê Trứng Giảng",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "dac_san",
+            "cafe"
+          ],
+          "address": "39 Nguyễn Hữu Huân, Hoàn Kiếm, Hà Nội",
+          "coordinates": {
+            "lat": 21.0344,
+            "lng": 105.8526
+          },
+          "description": "Quán cà phê trứng nổi tiếng Hà Nội từ 1946, icon ẩm thực",
+          "open_hours": "07:00 - 22:00",
+          "price_range": "30.000 - 80.000 VNĐ",
+          "rating": 4.5
+        },
+        {
+          "id": "HN003",
+          "name": "Phố Bích Họa Phùng Hưng",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "nghe_thuat"
+          ],
+          "address": "Phùng Hưng, Hoàn Kiếm, Hà Nội",
+          "coordinates": {
+            "lat": 21.0364,
+            "lng": 105.8448
+          },
+          "description": "Con phố bích họa nghệ thuật dài 300m, điểm check-in hot",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.4
+        },
+        {
+          "id": "HN004",
+          "name": "Bún Chả Hương Liên (Obama)",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "dac_san",
+            "noi_tieng"
+          ],
+          "address": "24 Lê Văn Hưu, Hai Bà Trưng, Hà Nội",
+          "coordinates": {
+            "lat": 21.0205,
+            "lng": 105.8495
+          },
+          "description": "Quán bún chả nổi tiếng thế giới nhờ cựu Tổng thống Obama ghé thăm",
+          "open_hours": "08:00 - 20:30",
+          "price_range": "45.000 - 70.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "HN005",
+          "name": "Văn Miếu - Quốc Tử Giám",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "van_hoa",
+            "check_in"
+          ],
+          "address": "58 Quốc Tử Giám, Đống Đa, Hà Nội",
+          "coordinates": {
+            "lat": 21.0277,
+            "lng": 105.8355
+          },
+          "description": "Trường đại học đầu tiên của Việt Nam, biểu tượng học vấn",
+          "open_hours": "08:00 - 17:00",
+          "price_range": "30.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "HN006",
+          "name": "Chợ Đêm Đồng Xuân",
+          "category": "mua_sam",
+          "tags": [
+            "hot_trend",
+            "cho_dem",
+            "an_uong"
+          ],
+          "address": "Đồng Xuân, Hoàn Kiếm, Hà Nội",
+          "coordinates": {
+            "lat": 21.0398,
+            "lng": 105.8484
+          },
+          "description": "Chợ đêm sầm uất nhất Hà Nội, đồ ăn và hàng hóa đa dạng",
+          "open_hours": "18:00 - 23:00 (T6-CN)",
+          "price_range": "20.000 - 200.000 VNĐ",
+          "rating": 4.3
+        },
+        {
+          "id": "HN007",
+          "name": "Phở Thìn Bờ Hồ",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "pho",
+            "truyen_thong"
+          ],
+          "address": "61 Đinh Tiên Hoàng, Hoàn Kiếm, Hà Nội",
+          "coordinates": {
+            "lat": 21.0296,
+            "lng": 105.8528
+          },
+          "description": "Quán phở bò lâu đời nức tiếng Hà Nội từ 1955",
+          "open_hours": "06:00 - 10:30",
+          "price_range": "60.000 - 80.000 VNĐ",
+          "rating": 4.5
+        },
+        {
+          "id": "HN008",
+          "name": "Lotte Observation Deck",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "view_dep"
+          ],
+          "address": "54 Liễu Giai, Ba Đình, Hà Nội",
+          "coordinates": {
+            "lat": 21.0241,
+            "lng": 105.8149
+          },
+          "description": "Đài quan sát tầng 65 Lotte Center, view toàn cảnh Hà Nội",
+          "open_hours": "09:00 - 22:00",
+          "price_range": "200.000 VNĐ",
+          "rating": 4.5
+        }
+      ],
+      "city": "Hà Nội",
+      "search_terms": [
+        "ha noi",
+        "hà nội",
+        "hanoi",
+        "hn",
+        "thu do",
+        "thủ đô"
+      ]
+    },
+    {
+      "id": 2,
+      "code": "HP",
+      "name": "Hải Phòng",
+      "type": "Thành phố trực thuộc TW",
+      "coordinates": {
+        "lat": 20.8449,
+        "lng": 106.6881
+      },
+      "places": [
+        {
+          "id": "HP001",
+          "name": "Đảo Cát Bà",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "bien_dao",
+            "thien_nhien"
+          ],
+          "address": "Cát Bà, Cát Hải, Hải Phòng",
+          "coordinates": {
+            "lat": 20.7274,
+            "lng": 107.0475
+          },
+          "description": "Đảo lớn nhất vịnh Lan Hạ, khu dự trữ sinh quyển thế giới",
+          "open_hours": "24/7",
+          "price_range": "Phà: 50.000 - 80.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "HP002",
+          "name": "Bánh Mì Que Hải Phòng - Thanh Nga",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "dac_san",
+            "street_food"
+          ],
+          "address": "Hàng Kênh, Lê Chân, Hải Phòng",
+          "coordinates": {
+            "lat": 20.8528,
+            "lng": 106.6921
+          },
+          "description": "Bánh mì que đặc sản Hải Phòng nổi tiếng khắp cả nước",
+          "open_hours": "06:00 - 20:00",
+          "price_range": "5.000 - 15.000 VNĐ/chiếc",
+          "rating": 4.5
+        },
+        {
+          "id": "HP003",
+          "name": "Bãi biển Đồ Sơn",
+          "category": "du_lich",
+          "tags": [
+            "bien",
+            "nghi_duong"
+          ],
+          "address": "Đồ Sơn, Hải Phòng",
+          "coordinates": {
+            "lat": 20.7214,
+            "lng": 106.7641
+          },
+          "description": "Bãi biển gần thành phố, khu du lịch nghỉ dưỡng",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí vào bãi",
+          "rating": 3.9
+        },
+        {
+          "id": "HP004",
+          "name": "Bánh Đa Cua Hải Phòng - Bà Cụ",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "truyen_thong"
+          ],
+          "address": "1 Hoàng Diệu, Minh Khai, Hồng Bàng, Hải Phòng",
+          "coordinates": {
+            "lat": 20.8608,
+            "lng": 106.6782
+          },
+          "description": "Bánh đa cua đặc sản nổi tiếng nhất Hải Phòng",
+          "open_hours": "06:00 - 11:00",
+          "price_range": "35.000 - 50.000 VNĐ",
+          "rating": 4.6
+        }
+      ],
+      "city": "Hải Phòng",
+      "search_terms": [
+        "hai phong",
+        "hải phòng",
+        "haiphong",
+        "hp"
+      ]
+    },
+    {
+      "id": 3,
+      "code": "QN",
+      "name": "Quảng Ninh",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.006,
+        "lng": 107.2925
+      },
+      "places": [
+        {
+          "id": "QN001",
+          "name": "Vịnh Hạ Long",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "di_san_the_gioi",
+            "bien_dao"
+          ],
+          "address": "Hạ Long, Quảng Ninh",
+          "coordinates": {
+            "lat": 20.9101,
+            "lng": 107.1839
+          },
+          "description": "Di sản thiên nhiên thế giới UNESCO, kỳ quan thiên nhiên thế giới",
+          "open_hours": "24/7",
+          "price_range": "Tour: 500.000 - 5.000.000 VNĐ",
+          "rating": 4.8
+        },
+        {
+          "id": "QN002",
+          "name": "Sun World Hạ Long Park",
+          "category": "vui_choi",
+          "tags": [
+            "hot_trend",
+            "cong_vien_giai_tri",
+            "gia_dinh"
+          ],
+          "address": "Bãi Cháy, Hạ Long, Quảng Ninh",
+          "coordinates": {
+            "lat": 20.9603,
+            "lng": 107.0754
+          },
+          "description": "Công viên giải trí phức hợp lớn nhất Đông Nam Á",
+          "open_hours": "09:00 - 21:00",
+          "price_range": "400.000 - 750.000 VNĐ",
+          "rating": 4.4
+        },
+        {
+          "id": "QN003",
+          "name": "Chợ Hải Sản Hạ Long",
+          "category": "an_uong",
+          "tags": [
+            "hai_san",
+            "cho",
+            "dac_san"
+          ],
+          "address": "Cảng Tuần Châu, Hạ Long, Quảng Ninh",
+          "coordinates": {
+            "lat": 20.9302,
+            "lng": 107.0414
+          },
+          "description": "Chợ hải sản tươi sống nổi tiếng, mực, tôm, cua giá rẻ",
+          "open_hours": "06:00 - 20:00",
+          "price_range": "Tùy loại hải sản",
+          "rating": 4.3
+        },
+        {
+          "id": "QN004",
+          "name": "Làng Chài Cửa Vạn",
+          "category": "du_lich",
+          "tags": [
+            "van_hoa",
+            "check_in",
+            "lang_chài"
+          ],
+          "address": "Vịnh Hạ Long, Quảng Ninh",
+          "coordinates": {
+            "lat": 20.8753,
+            "lng": 107.1423
+          },
+          "description": "Làng chài nổi trên vịnh Hạ Long, nét văn hóa độc đáo",
+          "open_hours": "24/7 (tour từ 07:00 - 18:00)",
+          "price_range": "Theo tour",
+          "rating": 4.5
+        }
+      ],
+      "city": "Hạ Long",
+      "search_terms": [
+        "quang ninh",
+        "quảng ninh",
+        "ha long",
+        "hạ long",
+        "halong",
+        "vinh ha long"
+      ]
+    },
+    {
+      "id": 4,
+      "code": "LC",
+      "name": "Lào Cai",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 22.4809,
+        "lng": 103.9754
+      },
+      "places": [
+        {
+          "id": "LC001",
+          "name": "Sa Pa - Thị trấn trong mây",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "nui_non",
+            "thien_nhien"
+          ],
+          "address": "Sa Pa, Lào Cai",
+          "coordinates": {
+            "lat": 22.3364,
+            "lng": 103.8438
+          },
+          "description": "Thị trấn mờ sương trên độ cao 1600m, điểm du lịch nổi tiếng nhất Tây Bắc",
+          "open_hours": "24/7",
+          "price_range": "Đa dạng",
+          "rating": 4.7
+        },
+        {
+          "id": "LC002",
+          "name": "Cầu Kính Rồng Mây Bach Long",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "mao_hiem"
+          ],
+          "address": "Lũng Pô, Bát Xát, Lào Cai",
+          "coordinates": {
+            "lat": 22.6921,
+            "lng": 103.9741
+          },
+          "description": "Cầu kính dài nhất thế giới 632m, trải nghiệm mạo hiểm đỉnh cao",
+          "open_hours": "08:00 - 18:00",
+          "price_range": "300.000 - 500.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "LC003",
+          "name": "Đỉnh Fansipan - Nóc nhà Đông Dương",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "trekking",
+            "nui_cao"
+          ],
+          "address": "Fansipan, Sa Pa, Lào Cai",
+          "coordinates": {
+            "lat": 22.3027,
+            "lng": 103.7759
+          },
+          "description": "Đỉnh núi cao nhất Đông Dương 3143m, cáp treo hoặc leo bộ",
+          "open_hours": "07:30 - 17:30",
+          "price_range": "Cáp treo: 750.000 - 900.000 VNĐ",
+          "rating": 4.8
+        },
+        {
+          "id": "LC004",
+          "name": "Ruộng Bậc Thang Mù Cang Chải",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "thien_nhien"
+          ],
+          "address": "Mù Cang Chải, Yên Bái (gần Lào Cai)",
+          "coordinates": {
+            "lat": 21.8179,
+            "lng": 104.0747
+          },
+          "description": "Ruộng bậc thang đẹp nhất Việt Nam, đặc biệt mùa lúa chín tháng 9-10",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.8
+        },
+        {
+          "id": "LC005",
+          "name": "Thắng Cố Sa Pa (Chợ phiên)",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "van_hoa",
+            "cho_phien"
+          ],
+          "address": "Bắc Hà, Lào Cai",
+          "coordinates": {
+            "lat": 22.5298,
+            "lng": 104.2853
+          },
+          "description": "Chợ phiên Bắc Hà họp CN, thắng cố ngựa đặc sản vùng cao",
+          "open_hours": "Chủ nhật: 06:00 - 14:00",
+          "price_range": "40.000 - 60.000 VNĐ/bát",
+          "rating": 4.4
+        }
+      ],
+      "city": "Lào Cai",
+      "search_terms": [
+        "lao cai",
+        "lào cai",
+        "sapa",
+        "sa pa",
+        "sa-pa"
+      ]
+    },
+    {
+      "id": 5,
+      "code": "YB",
+      "name": "Yên Bái",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.7051,
+        "lng": 104.8753
+      },
+      "places": [
+        {
+          "id": "YB001",
+          "name": "Ruộng Bậc Thang Mù Cang Chải",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "thien_nhien"
+          ],
+          "address": "Mù Cang Chải, Yên Bái",
+          "coordinates": {
+            "lat": 21.8179,
+            "lng": 104.0747
+          },
+          "description": "Di tích quốc gia, ruộng bậc thang đẹp nhất Việt Nam",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.9
+        },
+        {
+          "id": "YB002",
+          "name": "Hồ Thác Bà",
+          "category": "du_lich",
+          "tags": [
+            "thien_nhien",
+            "ho_nuoc",
+            "check_in"
+          ],
+          "address": "Yên Bình, Yên Bái",
+          "coordinates": {
+            "lat": 21.8742,
+            "lng": 105.0241
+          },
+          "description": "Hồ nước nhân tạo lớn nhất miền Bắc, thiên đường du lịch sinh thái",
+          "open_hours": "24/7",
+          "price_range": "Tour: 200.000 - 500.000 VNĐ",
+          "rating": 4.5
+        }
+      ],
+      "city": "Yên Bái",
+      "search_terms": [
+        "yen bai",
+        "yên bái",
+        "mu cang chai",
+        "mù cang chải"
+      ]
+    },
+    {
+      "id": 6,
+      "code": "HG",
+      "name": "Hà Giang",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 22.8026,
+        "lng": 104.9784
+      },
+      "places": [
+        {
+          "id": "HG001",
+          "name": "Đèo Mã Pí Lèng",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "deo_nui"
+          ],
+          "address": "Đồng Văn, Hà Giang",
+          "coordinates": {
+            "lat": 23.1678,
+            "lng": 105.3162
+          },
+          "description": "Con đèo huyền thoại nằm trên tứ đại đỉnh đèo Việt Nam",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.9
+        },
+        {
+          "id": "HG002",
+          "name": "Cao Nguyên Đá Đồng Văn",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "di_san_the_gioi",
+            "thien_nhien"
+          ],
+          "address": "Đồng Văn, Hà Giang",
+          "coordinates": {
+            "lat": 23.2752,
+            "lng": 105.3607
+          },
+          "description": "Công viên địa chất toàn cầu UNESCO, cảnh quan đá vôi hùng vĩ",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.8
+        },
+        {
+          "id": "HG003",
+          "name": "Cột Cờ Lũng Cú",
+          "category": "du_lich",
+          "tags": [
+            "diem_cuc_bac",
+            "lich_su",
+            "check_in"
+          ],
+          "address": "Lũng Cú, Đồng Văn, Hà Giang",
+          "coordinates": {
+            "lat": 23.3622,
+            "lng": 105.3358
+          },
+          "description": "Điểm cực Bắc Việt Nam, cột cờ chủ quyền thiêng liêng",
+          "open_hours": "07:00 - 18:00",
+          "price_range": "10.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "HG004",
+          "name": "Tam Giác Mạch - Cánh đồng hoa",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "hoa_tam_giac_mach",
+            "check_in"
+          ],
+          "address": "Đồng Văn, Mèo Vạc, Hà Giang",
+          "coordinates": {
+            "lat": 23.2101,
+            "lng": 105.3872
+          },
+          "description": "Cánh đồng hoa tam giác mạch nở rực rỡ tháng 10-12",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.8
+        }
+      ],
+      "city": "Hà Giang",
+      "search_terms": [
+        "ha giang",
+        "hà giang",
+        "dong van",
+        "đồng văn",
+        "meo vac",
+        "mèo vạc"
+      ]
+    },
+    {
+      "id": 7,
+      "code": "TB",
+      "name": "Thái Bình",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 20.4464,
+        "lng": 106.3421
+      },
+      "places": [
+        {
+          "id": "TB001",
+          "name": "Chùa Keo",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "tam_linh",
+            "kien_truc"
+          ],
+          "address": "Duy Nhất, Vũ Thư, Thái Bình",
+          "coordinates": {
+            "lat": 20.4968,
+            "lng": 106.2849
+          },
+          "description": "Chùa cổ thế kỷ 17, kiến trúc gỗ độc đáo bậc nhất Việt Nam",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "Miễn phí",
+          "rating": 4.5
+        },
+        {
+          "id": "TB002",
+          "name": "Bánh Cáy Làng Nguyễn",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "banh_keo"
+          ],
+          "address": "Đông Hưng, Thái Bình",
+          "coordinates": {
+            "lat": 20.4739,
+            "lng": 106.4189
+          },
+          "description": "Đặc sản bánh cáy nổi tiếng của Thái Bình",
+          "open_hours": "07:00 - 19:00",
+          "price_range": "80.000 - 150.000 VNĐ/hộp",
+          "rating": 4.4
+        }
+      ],
+      "city": "Thái Bình",
+      "search_terms": [
+        "thai binh",
+        "thái bình"
+      ]
+    },
+    {
+      "id": 8,
+      "code": "HB",
+      "name": "Hòa Bình",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 20.8172,
+        "lng": 105.3376
+      },
+      "places": [
+        {
+          "id": "HB001",
+          "name": "Hồ Hòa Bình",
+          "category": "du_lich",
+          "tags": [
+            "thien_nhien",
+            "ho_nuoc",
+            "sinh_thai"
+          ],
+          "address": "TP. Hòa Bình, Hòa Bình",
+          "coordinates": {
+            "lat": 20.8451,
+            "lng": 105.2203
+          },
+          "description": "Hồ thủy điện lớn, du thuyền thăm quan các bản làng ven hồ",
+          "open_hours": "24/7",
+          "price_range": "Tour thuyền: 200.000-400.000 VNĐ",
+          "rating": 4.4
+        },
+        {
+          "id": "HB002",
+          "name": "Mai Châu Valley",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "homestay",
+            "van_hoa_thai"
+          ],
+          "address": "Mai Châu, Hòa Bình",
+          "coordinates": {
+            "lat": 20.6673,
+            "lng": 105.0579
+          },
+          "description": "Thung lũng Mai Châu đẹp như tranh, văn hóa dân tộc Thái",
+          "open_hours": "24/7",
+          "price_range": "Homestay: 200.000 - 500.000 VNĐ/đêm",
+          "rating": 4.6
+        },
+        {
+          "id": "HB003",
+          "name": "Rượu Cần Hòa Bình",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "ruou",
+            "van_hoa"
+          ],
+          "address": "Bản Lác, Mai Châu, Hòa Bình",
+          "coordinates": {
+            "lat": 20.6498,
+            "lng": 104.9982
+          },
+          "description": "Rượu cần đặc sản dân tộc Thái, uống trong không khí cộng đồng",
+          "open_hours": "Tại các homestay, nhà hàng",
+          "price_range": "50.000 - 100.000 VNĐ/người",
+          "rating": 4.5
+        }
+      ],
+      "city": "Hòa Bình",
+      "search_terms": [
+        "hoa binh",
+        "hòa bình",
+        "mai chau",
+        "mai châu"
+      ]
+    },
+    {
+      "id": 9,
+      "code": "SN",
+      "name": "Sơn La",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.3272,
+        "lng": 103.9141
+      },
+      "places": [
+        {
+          "id": "SN001",
+          "name": "Mộc Châu - Cao Nguyên Xanh",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "cao_nguyen",
+            "hoa_cai"
+          ],
+          "address": "Mộc Châu, Sơn La",
+          "coordinates": {
+            "lat": 20.8368,
+            "lng": 104.6849
+          },
+          "description": "Cao nguyên xanh mát, mùa hoa cải tháng 11-12 nổi tiếng",
+          "open_hours": "24/7",
+          "price_range": "Đa dạng",
+          "rating": 4.7
+        },
+        {
+          "id": "SN002",
+          "name": "Hồ Sơn La (Pa Vinh)",
+          "category": "du_lich",
+          "tags": [
+            "thien_nhien",
+            "ho_nuoc"
+          ],
+          "address": "TP. Sơn La, Sơn La",
+          "coordinates": {
+            "lat": 21.3328,
+            "lng": 103.9042
+          },
+          "description": "Hồ nước trong thành phố Sơn La, không gian thư giãn",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.2
+        }
+      ],
+      "city": "Sơn La",
+      "search_terms": [
+        "son la",
+        "sơn la"
+      ]
+    },
+    {
+      "id": 10,
+      "code": "LA",
+      "name": "Lai Châu",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 22.3964,
+        "lng": 103.4319
+      },
+      "places": [
+        {
+          "id": "LA001",
+          "name": "Đỉnh Putaleng",
+          "category": "du_lich",
+          "tags": [
+            "trekking",
+            "nui_cao",
+            "mao_hiem"
+          ],
+          "address": "Tân Uyên, Lai Châu",
+          "coordinates": {
+            "lat": 22.4154,
+            "lng": 103.5387
+          },
+          "description": "Đỉnh núi cao thứ 2 Việt Nam 3049m, thiên đường trekking",
+          "open_hours": "24/7",
+          "price_range": "Theo tour: 1.500.000 - 3.000.000 VNĐ",
+          "rating": 4.7
+        }
+      ],
+      "city": "Lai Châu",
+      "search_terms": [
+        "lai chau",
+        "lai châu"
+      ]
+    },
+    {
+      "id": 11,
+      "code": "DB",
+      "name": "Điện Biên",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.386,
+        "lng": 103.0023
+      },
+      "places": [
+        {
+          "id": "DB001",
+          "name": "Di tích Chiến trường Điện Biên Phủ",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "bao_tang",
+            "van_hoa"
+          ],
+          "address": "TP. Điện Biên Phủ, Điện Biên",
+          "coordinates": {
+            "lat": 21.3895,
+            "lng": 103.0226
+          },
+          "description": "Khu di tích lịch sử chiến thắng Điện Biên Phủ 1954",
+          "open_hours": "07:00 - 17:30",
+          "price_range": "30.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "DB002",
+          "name": "Cánh Đồng Mường Thanh",
+          "category": "du_lich",
+          "tags": [
+            "thien_nhien",
+            "check_in",
+            "lua_vang"
+          ],
+          "address": "Mường Thanh, Điện Biên Phủ, Điện Biên",
+          "coordinates": {
+            "lat": 21.3685,
+            "lng": 103.0178
+          },
+          "description": "Cánh đồng lúa lớn nhất Tây Bắc, đẹp nhất mùa lúa chín",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        }
+      ],
+      "city": "Điện Biên Phủ",
+      "search_terms": [
+        "dien bien",
+        "điện biên",
+        "dien bien phu",
+        "điện biên phủ"
+      ]
+    },
+    {
+      "id": 12,
+      "code": "PTO",
+      "name": "Phú Thọ",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.3453,
+        "lng": 105.2012
+      },
+      "places": [
+        {
+          "id": "PTO001",
+          "name": "Đền Hùng",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "tam_linh",
+            "le_hoi"
+          ],
+          "address": "Hy Cương, Lâm Thao, Phú Thọ",
+          "coordinates": {
+            "lat": 21.3978,
+            "lng": 105.1867
+          },
+          "description": "Đền thờ các Vua Hùng, nơi cội nguồn dân tộc Việt",
+          "open_hours": "07:00 - 17:30",
+          "price_range": "Miễn phí",
+          "rating": 4.7
+        },
+        {
+          "id": "PTO002",
+          "name": "VinWonders Phú Quốc (Phú Thọ water park)",
+          "category": "vui_choi",
+          "tags": [
+            "hot_trend",
+            "nuoc",
+            "gia_dinh"
+          ],
+          "address": "Bạch Hạc, Việt Trì, Phú Thọ",
+          "coordinates": {
+            "lat": 21.2835,
+            "lng": 105.3712
+          },
+          "description": "Công viên nước Thanh Thủy lớn tại Phú Thọ",
+          "open_hours": "08:00 - 17:30",
+          "price_range": "200.000 - 350.000 VNĐ",
+          "rating": 4.3
+        }
+      ],
+      "city": "Việt Trì",
+      "search_terms": [
+        "phu tho",
+        "phú thọ",
+        "viet tri",
+        "việt trì"
+      ]
+    },
+    {
+      "id": 13,
+      "code": "TQ",
+      "name": "Tuyên Quang",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.8236,
+        "lng": 105.2148
+      },
+      "places": [
+        {
+          "id": "TQ001",
+          "name": "Na Hang - Lâm Bình",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "thien_nhien",
+            "ho_nuoc"
+          ],
+          "address": "Na Hang, Tuyên Quang",
+          "coordinates": {
+            "lat": 22.3702,
+            "lng": 105.3695
+          },
+          "description": "Vịnh Hạ Long trên cạn, thuyền kayak giữa núi đá vôi và mặt hồ",
+          "open_hours": "24/7",
+          "price_range": "Tour thuyền: 200.000 - 400.000 VNĐ",
+          "rating": 4.8
+        }
+      ],
+      "city": "Tuyên Quang",
+      "search_terms": [
+        "tuyen quang",
+        "tuyên quang"
+      ]
+    },
+    {
+      "id": 14,
+      "code": "BK",
+      "name": "Bắc Kạn",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 22.1477,
+        "lng": 105.8348
+      },
+      "places": [
+        {
+          "id": "BK001",
+          "name": "Hồ Ba Bể",
+          "category": "du_lich",
+          "tags": [
+            "di_san_the_gioi",
+            "thien_nhien",
+            "ho_nuoc"
+          ],
+          "address": "Ba Bể, Bắc Kạn",
+          "coordinates": {
+            "lat": 22.3996,
+            "lng": 105.6128
+          },
+          "description": "Hồ nước ngọt tự nhiên lớn nhất Việt Nam, vườn quốc gia",
+          "open_hours": "24/7",
+          "price_range": "Vé vườn: 40.000 VNĐ, tour thuyền: 200.000-400.000 VNĐ",
+          "rating": 4.8
+        }
+      ],
+      "city": "Bắc Kạn",
+      "search_terms": [
+        "bac kan",
+        "bắc kạn",
+        "ba be",
+        "ba bể"
+      ]
+    },
+    {
+      "id": 15,
+      "code": "LS",
+      "name": "Lạng Sơn",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.8537,
+        "lng": 106.7616
+      },
+      "places": [
+        {
+          "id": "LS001",
+          "name": "Ải Chi Lăng",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "thien_nhien"
+          ],
+          "address": "Chi Lăng, Lạng Sơn",
+          "coordinates": {
+            "lat": 21.7148,
+            "lng": 106.5892
+          },
+          "description": "Ải lịch sử nơi quân ta đánh tan quân Minh năm 1427",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.4
+        },
+        {
+          "id": "LS002",
+          "name": "Chợ Kỳ Lừa - Chợ vùng biên",
+          "category": "mua_sam",
+          "tags": [
+            "cho",
+            "hang_hoa",
+            "bien_gioi"
+          ],
+          "address": "Kỳ Lừa, TP. Lạng Sơn",
+          "coordinates": {
+            "lat": 21.8514,
+            "lng": 106.7614
+          },
+          "description": "Chợ biên giới lớn nhất, hàng hóa đa dạng giá rẻ",
+          "open_hours": "06:00 - 20:00",
+          "price_range": "Đa dạng",
+          "rating": 4.2
+        },
+        {
+          "id": "LS003",
+          "name": "Vịt Quay Lạng Sơn",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "vit_quay"
+          ],
+          "address": "Nhiều điểm tại TP. Lạng Sơn",
+          "coordinates": {
+            "lat": 21.8537,
+            "lng": 106.7616
+          },
+          "description": "Vịt quay đặc sản Lạng Sơn nổi tiếng, ướp gia vị đặc biệt",
+          "open_hours": "10:00 - 20:00",
+          "price_range": "250.000 - 400.000 VNĐ/con",
+          "rating": 4.6
+        }
+      ],
+      "city": "Lạng Sơn",
+      "search_terms": [
+        "lang son",
+        "lạng sơn"
+      ]
+    },
+    {
+      "id": 16,
+      "code": "CB",
+      "name": "Cao Bằng",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 22.6657,
+        "lng": 106.2639
+      },
+      "places": [
+        {
+          "id": "CB001",
+          "name": "Thác Bản Giốc",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "thac_nuoc",
+            "bien_gioi"
+          ],
+          "address": "Đàm Thủy, Trùng Khánh, Cao Bằng",
+          "coordinates": {
+            "lat": 22.8565,
+            "lng": 106.7078
+          },
+          "description": "Thác nước hùng vĩ nhất Đông Nam Á, biên giới Việt-Trung",
+          "open_hours": "07:00 - 17:30",
+          "price_range": "45.000 VNĐ",
+          "rating": 4.9
+        },
+        {
+          "id": "CB002",
+          "name": "Động Ngườm Ngao",
+          "category": "du_lich",
+          "tags": [
+            "hang_dong",
+            "thien_nhien"
+          ],
+          "address": "Đàm Thủy, Trùng Khánh, Cao Bằng",
+          "coordinates": {
+            "lat": 22.8632,
+            "lng": 106.6891
+          },
+          "description": "Hang động đá vôi kỳ ảo dài 2144m gần thác Bản Giốc",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "40.000 VNĐ",
+          "rating": 4.6
+        }
+      ],
+      "city": "Cao Bằng",
+      "search_terms": [
+        "cao bang",
+        "cao bằng",
+        "ban gioc",
+        "bản giốc"
+      ]
+    },
+    {
+      "id": 17,
+      "code": "BG",
+      "name": "Bắc Giang",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.2823,
+        "lng": 106.1976
+      },
+      "places": [
+        {
+          "id": "BG001",
+          "name": "Vải Thiều Lục Ngạn",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "trai_cay",
+            "vuon"
+          ],
+          "address": "Lục Ngạn, Bắc Giang",
+          "coordinates": {
+            "lat": 21.4123,
+            "lng": 106.5382
+          },
+          "description": "Vùng vải thiều nổi tiếng nhất Việt Nam, tham quan vườn tháng 5-6",
+          "open_hours": "Mùa vải: tháng 5-6",
+          "price_range": "20.000 - 30.000 VNĐ/kg",
+          "rating": 4.7
+        },
+        {
+          "id": "BG002",
+          "name": "Chùa Vĩnh Nghiêm",
+          "category": "du_lich",
+          "tags": [
+            "tam_linh",
+            "lich_su",
+            "kien_truc"
+          ],
+          "address": "Trí Yên, Yên Dũng, Bắc Giang",
+          "coordinates": {
+            "lat": 21.2018,
+            "lng": 106.3741
+          },
+          "description": "Trung tâm Phật giáo cổ xưa nhất Việt Nam",
+          "open_hours": "06:00 - 18:00",
+          "price_range": "Miễn phí",
+          "rating": 4.5
+        }
+      ],
+      "city": "Bắc Giang",
+      "search_terms": [
+        "bac giang",
+        "bắc giang"
+      ]
+    },
+    {
+      "id": 18,
+      "code": "BN",
+      "name": "Bắc Ninh",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 21.1214,
+        "lng": 106.1112
+      },
+      "places": [
+        {
+          "id": "BN001",
+          "name": "Làng Quan Họ Diềm",
+          "category": "du_lich",
+          "tags": [
+            "van_hoa",
+            "am_nhac",
+            "di_san_the_gioi"
+          ],
+          "address": "Viêm Xá (làng Diềm), Hòa Long, TP. Bắc Ninh",
+          "coordinates": {
+            "lat": 21.1591,
+            "lng": 106.0781
+          },
+          "description": "Cái nôi dân ca Quan Họ Bắc Ninh - Di sản phi vật thể UNESCO",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.5
+        },
+        {
+          "id": "BN002",
+          "name": "Chùa Bút Tháp",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "kien_truc",
+            "tam_linh"
+          ],
+          "address": "Đình Tổ, Thuận Thành, Bắc Ninh",
+          "coordinates": {
+            "lat": 21.0413,
+            "lng": 106.1219
+          },
+          "description": "Chùa cổ thế kỷ 17, kiệt tác kiến trúc Phật giáo miền Bắc",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        }
+      ],
+      "city": "Bắc Ninh",
+      "search_terms": [
+        "bac ninh",
+        "bắc ninh"
+      ]
+    },
+    {
+      "id": 19,
+      "code": "HD",
+      "name": "Hải Dương",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 20.9373,
+        "lng": 106.3147
+      },
+      "places": [
+        {
+          "id": "HD001",
+          "name": "Côn Sơn - Kiếp Bạc",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "tam_linh",
+            "le_hoi"
+          ],
+          "address": "Cẩm Điền, Cẩm Giàng, Hải Dương",
+          "coordinates": {
+            "lat": 21.0467,
+            "lng": 106.5089
+          },
+          "description": "Khu di tích quốc gia đặc biệt, chùa Côn Sơn và đền Kiếp Bạc",
+          "open_hours": "06:00 - 18:00",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        },
+        {
+          "id": "HD002",
+          "name": "Bánh Đậu Xanh Rồng Vàng",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "banh_keo"
+          ],
+          "address": "TP. Hải Dương, Hải Dương",
+          "coordinates": {
+            "lat": 20.9373,
+            "lng": 106.3147
+          },
+          "description": "Bánh đậu xanh đặc sản Hải Dương, quà tặng nổi tiếng",
+          "open_hours": "07:30 - 20:00",
+          "price_range": "50.000 - 200.000 VNĐ/hộp",
+          "rating": 4.5
+        }
+      ],
+      "city": "Hải Dương",
+      "search_terms": [
+        "hai duong",
+        "hải dương"
+      ]
+    },
+    {
+      "id": 20,
+      "code": "HY",
+      "name": "Hưng Yên",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 20.6464,
+        "lng": 106.0511
+      },
+      "places": [
+        {
+          "id": "HY001",
+          "name": "Phố Hiến - Phố cổ",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "van_hoa",
+            "pho_co"
+          ],
+          "address": "Hồng Châu, TP. Hưng Yên",
+          "coordinates": {
+            "lat": 20.6461,
+            "lng": 106.0505
+          },
+          "description": "Đô thị cổ thế kỷ 17 'Thứ nhất Kinh Kỳ, thứ nhì Phố Hiến'",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.3
+        },
+        {
+          "id": "HY002",
+          "name": "Nhãn Lồng Hưng Yên",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "trai_cay"
+          ],
+          "address": "Nhiều vườn tại TP. Hưng Yên",
+          "coordinates": {
+            "lat": 20.6464,
+            "lng": 106.0511
+          },
+          "description": "Nhãn lồng ngon nhất Việt Nam, mùa thu hoạch tháng 7-8",
+          "open_hours": "Mùa nhãn: tháng 7-8",
+          "price_range": "30.000 - 50.000 VNĐ/kg",
+          "rating": 4.7
+        }
+      ],
+      "city": "Hưng Yên",
+      "search_terms": [
+        "hung yen",
+        "hưng yên"
+      ]
+    },
+    {
+      "id": 21,
+      "code": "NB",
+      "name": "Ninh Bình",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 20.2506,
+        "lng": 105.9745
+      },
+      "places": [
+        {
+          "id": "NB001",
+          "name": "Tràng An Scenic Landscape",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "di_san_the_gioi",
+            "thuyen_tho"
+          ],
+          "address": "Trường Yên, Hoa Lư, Ninh Bình",
+          "coordinates": {
+            "lat": 20.2644,
+            "lng": 105.8671
+          },
+          "description": "Di sản thiên nhiên & văn hóa thế giới kép duy nhất tại Đông Nam Á",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "200.000 VNĐ/người (thuyền)",
+          "rating": 4.8
+        },
+        {
+          "id": "NB002",
+          "name": "Hang Múa - Đỉnh Mua Cave",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "leo_nui"
+          ],
+          "address": "Khê Đầu Hạ, Ninh Xuân, Hoa Lư, Ninh Bình",
+          "coordinates": {
+            "lat": 20.2178,
+            "lng": 105.8782
+          },
+          "description": "leo 500 bậc đá lên đỉnh với view toàn cảnh Tam Cốc huyền ảo",
+          "open_hours": "07:00 - 18:00",
+          "price_range": "100.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "NB003",
+          "name": "Tam Cốc - Bích Động",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "thuyen_tho",
+            "hang_dong"
+          ],
+          "address": "Ninh Hải, Hoa Lư, Ninh Bình",
+          "coordinates": {
+            "lat": 20.2264,
+            "lng": 105.9151
+          },
+          "description": "Hạ Long trên cạn, chèo thuyền qua 3 hang núi đá vôi",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "150.000 VNĐ/người",
+          "rating": 4.6
+        },
+        {
+          "id": "NB004",
+          "name": "Cơm Cháy Ninh Bình",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "com_chay"
+          ],
+          "address": "Nhiều nhà hàng tại TP. Ninh Bình",
+          "coordinates": {
+            "lat": 20.2536,
+            "lng": 105.9755
+          },
+          "description": "Cơm cháy đặc sản Ninh Bình, giòn thơm, ăn với thịt dê/bê",
+          "open_hours": "10:00 - 21:00",
+          "price_range": "50.000 - 120.000 VNĐ",
+          "rating": 4.5
+        }
+      ],
+      "city": "Ninh Bình",
+      "search_terms": [
+        "ninh binh",
+        "ninh bình",
+        "tam coc",
+        "tam cốc",
+        "trang an",
+        "tràng an"
+      ]
+    },
+    {
+      "id": 22,
+      "code": "NA",
+      "name": "Nam Định",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 20.4347,
+        "lng": 106.1783
+      },
+      "places": [
+        {
+          "id": "NA001",
+          "name": "Phủ Dầy",
+          "category": "du_lich",
+          "tags": [
+            "tam_linh",
+            "le_hoi",
+            "van_hoa"
+          ],
+          "address": "Kim Thái, Vụ Bản, Nam Định",
+          "coordinates": {
+            "lat": 20.3014,
+            "lng": 106.0872
+          },
+          "description": "Trung tâm tín ngưỡng thờ Mẫu lớn nhất Việt Nam",
+          "open_hours": "06:00 - 18:00",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        },
+        {
+          "id": "NA002",
+          "name": "Phở Bò Nam Định",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "pho",
+            "truyen_thong"
+          ],
+          "address": "Nhiều quán trên phố Minh Khai, TP. Nam Định",
+          "coordinates": {
+            "lat": 20.4347,
+            "lng": 106.1783
+          },
+          "description": "Phở bò Nam Định - cái nôi của phở Việt Nam, nước dùng trong vắt",
+          "open_hours": "05:30 - 11:00",
+          "price_range": "40.000 - 60.000 VNĐ",
+          "rating": 4.7
+        }
+      ],
+      "city": "Nam Định",
+      "search_terms": [
+        "nam dinh",
+        "nam định"
+      ]
+    },
+    {
+      "id": 23,
+      "code": "HA",
+      "name": "Hà Nam",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 20.5835,
+        "lng": 105.9229
+      },
+      "places": [
+        {
+          "id": "HA001",
+          "name": "Kẽm Trống",
+          "category": "du_lich",
+          "tags": [
+            "thien_nhien",
+            "thuyen",
+            "check_in"
+          ],
+          "address": "Thanh Thủy, Thanh Liêm, Hà Nam",
+          "coordinates": {
+            "lat": 20.4254,
+            "lng": 105.8637
+          },
+          "description": "Hẻm núi nước tuyệt đẹp, chèo thuyền qua vách đá dựng đứng",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "Thuyền: 80.000 VNĐ/người",
+          "rating": 4.5
+        }
+      ],
+      "city": "Phủ Lý",
+      "search_terms": [
+        "ha nam",
+        "hà nam",
+        "phu ly",
+        "phủ lý"
+      ]
+    },
+    {
+      "id": 24,
+      "code": "TH",
+      "name": "Thanh Hóa",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 19.8067,
+        "lng": 105.7767
+      },
+      "places": [
+        {
+          "id": "TH001",
+          "name": "Bãi biển Sầm Sơn",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "bien",
+            "nghi_duong"
+          ],
+          "address": "Sầm Sơn, Thanh Hóa",
+          "coordinates": {
+            "lat": 19.7382,
+            "lng": 105.9049
+          },
+          "description": "Bãi biển dài đẹp nhất Bắc Trung Bộ, điểm du lịch biển nổi tiếng",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí vào bãi",
+          "rating": 4.2
+        },
+        {
+          "id": "TH002",
+          "name": "Thành Nhà Hồ",
+          "category": "du_lich",
+          "tags": [
+            "di_san_the_gioi",
+            "lich_su"
+          ],
+          "address": "Vĩnh Lộc, Thanh Hóa",
+          "coordinates": {
+            "lat": 20.0783,
+            "lng": 105.5874
+          },
+          "description": "Di sản văn hóa thế giới UNESCO, thành đá cổ duy nhất còn nguyên vẹn",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "20.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "TH003",
+          "name": "Nem chua Thanh Hóa",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "nem_chua"
+          ],
+          "address": "Khắp thị xã, TP. Thanh Hóa",
+          "coordinates": {
+            "lat": 19.8067,
+            "lng": 105.7767
+          },
+          "description": "Nem chua Thanh Hóa - đặc sản nổi tiếng cả nước, vị chua cay đặc trưng",
+          "open_hours": "07:00 - 21:00",
+          "price_range": "10.000 - 20.000 VNĐ/gói",
+          "rating": 4.6
+        }
+      ],
+      "city": "Thanh Hóa",
+      "search_terms": [
+        "thanh hoa",
+        "thanh hóa",
+        "sam son",
+        "sầm sơn"
+      ]
+    },
+    {
+      "id": 25,
+      "code": "NA2",
+      "name": "Nghệ An",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 18.6734,
+        "lng": 105.6922
+      },
+      "places": [
+        {
+          "id": "NA2001",
+          "name": "Bãi biển Cửa Lò",
+          "category": "du_lich",
+          "tags": [
+            "bien",
+            "nghi_duong"
+          ],
+          "address": "Cửa Lò, Nghệ An",
+          "coordinates": {
+            "lat": 18.8037,
+            "lng": 105.7262
+          },
+          "description": "Bãi biển đẹp của Nghệ An, nước trong xanh",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí vào bãi",
+          "rating": 4.2
+        },
+        {
+          "id": "NA2002",
+          "name": "Khu Di Tích Kim Liên",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "van_hoa",
+            "bac_ho"
+          ],
+          "address": "Kim Liên, Nam Đàn, Nghệ An",
+          "coordinates": {
+            "lat": 18.7241,
+            "lng": 105.4983
+          },
+          "description": "Quê hương Chủ tịch Hồ Chí Minh, khu di tích lịch sử quốc gia",
+          "open_hours": "07:00 - 17:30",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        },
+        {
+          "id": "NA2003",
+          "name": "Tương Bần - Mắm tôm Nghệ An",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "tuong"
+          ],
+          "address": "Nghĩa Đàn, Nghệ An",
+          "coordinates": {
+            "lat": 19.3284,
+            "lng": 105.4321
+          },
+          "description": "Tương Bần và mắm tôm đặc sản xứ Nghệ nổi tiếng cả nước",
+          "open_hours": "07:00 - 18:00",
+          "price_range": "30.000 - 100.000 VNĐ",
+          "rating": 4.4
+        }
+      ],
+      "city": "Vinh",
+      "search_terms": [
+        "nghe an",
+        "nghệ an",
+        "vinh",
+        "cua lo",
+        "cửa lò"
+      ]
+    }
+  ]
+}

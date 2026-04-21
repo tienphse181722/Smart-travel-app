@@ -15,8 +15,75 @@ class ItineraryService {
     required int numberOfDays,
     required DateTime startDate,
   }) async {
-    final places = await DataService.loadPlaces();
-    final foodPlaces = await DataService.loadFoodPlaces();
+    print('🚀 Generating trip for: $destination');
+    
+    // STEP 1: Get AI-ranked places for the specific province ONLY
+    final places = await DataService.getPlacesByProvince(destination);
+    
+    if (places.isEmpty) {
+      throw Exception('Không tìm thấy địa điểm nào cho "$destination". Vui lòng kiểm tra tên tỉnh/thành phố.');
+    }
+    
+    // STEP 2: Get food places from the same province ONLY
+    final region = DataService.detectRegion(destination);
+    final regionData = await DataService.loadRegionData(region);
+    final provinces = regionData['provinces'] as List;
+    
+    // Normalize province name for matching (support both province name and city name)
+    final normalizedInput = DataService.normalizeVietnamese(destination.toLowerCase());
+    final province = provinces.firstWhere(
+      (p) {
+        final provinceName = p['name'] as String;
+        final cityName = p['city'] as String?;
+        final searchTerms = p['search_terms'] as List?;
+        
+        final normalizedProvince = DataService.normalizeVietnamese(provinceName.toLowerCase());
+        final normalizedCity = cityName != null ? DataService.normalizeVietnamese(cityName.toLowerCase()) : '';
+        
+        // Match by province name, city name, or search terms
+        if (normalizedProvince == normalizedInput ||
+            normalizedProvince.contains(normalizedInput) ||
+            normalizedInput.contains(normalizedProvince)) {
+          return true;
+        }
+        
+        if (cityName != null && (normalizedCity == normalizedInput ||
+            normalizedCity.contains(normalizedInput) ||
+            normalizedInput.contains(normalizedCity))) {
+          return true;
+        }
+        
+        if (searchTerms != null) {
+          for (var term in searchTerms) {
+            final normalizedTerm = DataService.normalizeVietnamese(term.toString().toLowerCase());
+            if (normalizedTerm == normalizedInput ||
+                normalizedTerm.contains(normalizedInput) ||
+                normalizedInput.contains(normalizedTerm)) {
+              return true;
+            }
+          }
+        }
+        
+        return false;
+      },
+      orElse: () => null,
+    );
+    
+    if (province == null) {
+      throw Exception('Không tìm thấy tỉnh/thành phố "$destination"');
+    }
+    
+    final placesJson = province['places'] as List;
+    final foodPlaces = placesJson
+        .where((p) => p['category'] == 'an_uong')
+        .map((p) => FoodPlace.fromJson(p))
+        .toList();
+    
+    if (foodPlaces.isEmpty) {
+      throw Exception('Không tìm thấy địa điểm ăn uống nào cho "$destination"');
+    }
+    
+    print('✅ Found ${places.length} places and ${foodPlaces.length} food places in ${province['name']}');
 
     final List<List<Activity>> dailyActivities = [];
 
@@ -33,7 +100,7 @@ class ItineraryService {
 
     return Trip(
       id: uuid.v4(),
-      destination: destination,
+      destination: province['name'] as String, // Use exact province name from JSON
       numberOfDays: numberOfDays,
       startDate: startDate,
       dailyActivities: dailyActivities,

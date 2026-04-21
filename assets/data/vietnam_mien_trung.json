@@ -1,0 +1,1316 @@
+{
+  "region": "Miền Trung",
+  "description": "Các tỉnh thành miền Trung Việt Nam",
+  "total_provinces": 19,
+  "provinces": [
+    {
+      "id": 26,
+      "code": "HT",
+      "name": "Hà Tĩnh",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 18.3559,
+        "lng": 105.8877
+      },
+      "places": [
+        {
+          "id": "HT001",
+          "name": "Thiên Cầm Beach",
+          "category": "du_lich",
+          "tags": [
+            "bien",
+            "nghi_duong"
+          ],
+          "address": "Thiên Cầm, Cẩm Xuyên, Hà Tĩnh",
+          "coordinates": {
+            "lat": 18.2164,
+            "lng": 106.0189
+          },
+          "description": "Bãi biển đẹp với dòng nước trong xanh, hoàng hôn rực rỡ",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.3
+        },
+        {
+          "id": "HT002",
+          "name": "Khu Di tích Ngã ba Đồng Lộc",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "chien_tranh"
+          ],
+          "address": "Đồng Lộc, Can Lộc, Hà Tĩnh",
+          "coordinates": {
+            "lat": 18.3843,
+            "lng": 105.6142
+          },
+          "description": "Di tích lịch sử 10 cô gái thanh niên xung phong",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        }
+      ],
+      "city": "Hà Tĩnh",
+      "search_terms": [
+        "ha tinh",
+        "hà tĩnh"
+      ]
+    },
+    {
+      "id": 27,
+      "code": "QB",
+      "name": "Quảng Bình",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 17.4694,
+        "lng": 106.5997
+      },
+      "places": [
+        {
+          "id": "QB001",
+          "name": "Động Phong Nha",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "di_san_the_gioi",
+            "hang_dong"
+          ],
+          "address": "Sơn Trạch, Bố Trạch, Quảng Bình",
+          "coordinates": {
+            "lat": 17.599,
+            "lng": 106.2843
+          },
+          "description": "Di sản thiên nhiên thế giới, hang động nổi tiếng nhất Việt Nam",
+          "open_hours": "07:00 - 16:30",
+          "price_range": "150.000 VNĐ (thuyền nội)",
+          "rating": 4.8
+        },
+        {
+          "id": "QB002",
+          "name": "Hang Sơn Đoòng",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "hang_dong_lon_nhat_the_gioi",
+            "mao_hiem"
+          ],
+          "address": "Tân Trạch, Bố Trạch, Quảng Bình",
+          "coordinates": {
+            "lat": 17.5433,
+            "lng": 106.1785
+          },
+          "description": "Hang động lớn nhất thế giới, tour expedition giới hạn 1000 người/năm",
+          "open_hours": "Theo lịch tour",
+          "price_range": "3.000 USD/người (5 ngày 4 đêm)",
+          "rating": 5.0
+        },
+        {
+          "id": "QB003",
+          "name": "Hang Tối - Dark Cave",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "mao_hiem",
+            "zipline"
+          ],
+          "address": "Sơn Trạch, Bố Trạch, Quảng Bình",
+          "coordinates": {
+            "lat": 17.5941,
+            "lng": 106.2709
+          },
+          "description": "Zipline vào hang tối, bơi trong hồ bùn khoáng, trải nghiệm độc nhất",
+          "open_hours": "07:30 - 15:30",
+          "price_range": "450.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "QB004",
+          "name": "Bãi biển Nhật Lệ",
+          "category": "du_lich",
+          "tags": [
+            "bien",
+            "nghi_duong"
+          ],
+          "address": "Đồng Hới, Quảng Bình",
+          "coordinates": {
+            "lat": 17.4673,
+            "lng": 106.6239
+          },
+          "description": "Bãi biển trải dài 5km, nước trong xanh, cát trắng mịn",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.3
+        }
+      ],
+      "city": "Đồng Hới",
+      "search_terms": [
+        "quang binh",
+        "quảng bình",
+        "dong hoi",
+        "đồng hới",
+        "phong nha",
+        "phong nha ke bang"
+      ]
+    },
+    {
+      "id": 28,
+      "code": "QT",
+      "name": "Quảng Trị",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 16.7403,
+        "lng": 107.1854
+      },
+      "places": [
+        {
+          "id": "QT001",
+          "name": "Thành Cổ Quảng Trị",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "chien_tranh",
+            "di_tich"
+          ],
+          "address": "Phường 2, TP. Đông Hà, Quảng Trị",
+          "coordinates": {
+            "lat": 16.8187,
+            "lng": 107.1015
+          },
+          "description": "Di tích lịch sử chiến tranh 81 ngày đêm 1972, biểu tượng anh hùng",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "Miễn phí",
+          "rating": 4.7
+        },
+        {
+          "id": "QT002",
+          "name": "Cầu Hiền Lương - Sông Bến Hải",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "di_tich"
+          ],
+          "address": "Vĩnh Linh, Quảng Trị",
+          "coordinates": {
+            "lat": 17.0892,
+            "lng": 107.0764
+          },
+          "description": "Cây cầu lịch sử chia cắt hai miền Nam Bắc 1954-1975",
+          "open_hours": "07:00 - 18:00",
+          "price_range": "Miễn phí",
+          "rating": 4.5
+        }
+      ],
+      "city": "Đông Hà",
+      "search_terms": [
+        "quang tri",
+        "quảng trị",
+        "dong ha",
+        "đông hà"
+      ]
+    },
+    {
+      "id": 29,
+      "code": "TTH",
+      "name": "Thừa Thiên Huế",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 16.4637,
+        "lng": 107.5909
+      },
+      "places": [
+        {
+          "id": "TTH001",
+          "name": "Đại Nội Huế - Kinh Thành Huế",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "di_san_the_gioi",
+            "lich_su"
+          ],
+          "address": "Thuận Thành, TP. Huế",
+          "coordinates": {
+            "lat": 16.47,
+            "lng": 107.5777
+          },
+          "description": "Di sản văn hóa thế giới UNESCO, cung điện triều Nguyễn",
+          "open_hours": "07:00 - 17:30",
+          "price_range": "200.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "TTH002",
+          "name": "Lăng Khải Định",
+          "category": "du_lich",
+          "tags": [
+            "lich_su",
+            "kien_truc",
+            "check_in"
+          ],
+          "address": "Châu Chữ, TP. Huế",
+          "coordinates": {
+            "lat": 16.3943,
+            "lng": 107.5794
+          },
+          "description": "Lăng tẩm pha trộn kiến trúc Đông-Tây độc đáo, mosaic sắc màu",
+          "open_hours": "07:00 - 17:30",
+          "price_range": "100.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "TTH003",
+          "name": "Chùa Thiên Mụ",
+          "category": "du_lich",
+          "tags": [
+            "tam_linh",
+            "lich_su",
+            "check_in"
+          ],
+          "address": "Bờ Bắc Sông Hương, TP. Huế",
+          "coordinates": {
+            "lat": 16.4527,
+            "lng": 107.5474
+          },
+          "description": "Chùa cổ biểu tượng Huế, tháp Phước Duyên 7 tầng bên sông Hương",
+          "open_hours": "08:00 - 17:00",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        },
+        {
+          "id": "TTH004",
+          "name": "Bún Bò Huế Mụ Rớt",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "dac_san",
+            "bun_bo"
+          ],
+          "address": "47 Nguyễn Du, TP. Huế",
+          "coordinates": {
+            "lat": 16.4675,
+            "lng": 107.5943
+          },
+          "description": "Quán bún bò Huế chuẩn vị nổi tiếng nhất thành phố",
+          "open_hours": "06:00 - 11:00",
+          "price_range": "40.000 - 60.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "TTH005",
+          "name": "Đường Đinh Tiên Hoàng - Phố Đi Bộ Huế",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "pho_di_bo",
+            "check_in"
+          ],
+          "address": "Đinh Tiên Hoàng, TP. Huế",
+          "coordinates": {
+            "lat": 16.4688,
+            "lng": 107.5886
+          },
+          "description": "Phố đi bộ mới nhất Huế, không gian ẩm thực và văn hóa sầm uất",
+          "open_hours": "T6-CN: 19:00 - 23:00",
+          "price_range": "Miễn phí",
+          "rating": 4.4
+        }
+      ],
+      "city": "Huế",
+      "search_terms": [
+        "thua thien hue",
+        "thừa thiên huế",
+        "hue",
+        "huế",
+        "co do hue",
+        "cố đô huế"
+      ]
+    },
+    {
+      "id": 30,
+      "code": "DN",
+      "name": "Đà Nẵng",
+      "type": "Thành phố trực thuộc TW",
+      "coordinates": {
+        "lat": 16.0544,
+        "lng": 108.2022
+      },
+      "places": [
+        {
+          "id": "DN001",
+          "name": "Cầu Rồng & Phun Lửa",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "bieu_tuong",
+            "check_in"
+          ],
+          "address": "Cầu Rồng, Sơn Trà, Đà Nẵng",
+          "coordinates": {
+            "lat": 16.0613,
+            "lng": 108.2266
+          },
+          "description": "Cây cầu hình rồng phun lửa/nước tối T7-CN, biểu tượng Đà Nẵng",
+          "open_hours": "Phun lửa: 21:00 T7 & CN",
+          "price_range": "Miễn phí",
+          "rating": 4.7
+        },
+        {
+          "id": "DN002",
+          "name": "Bà Nà Hills - Cầu Vàng",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "cau_vang",
+            "check_in"
+          ],
+          "address": "Hòa Ninh, Hòa Vang, Đà Nẵng",
+          "coordinates": {
+            "lat": 15.9956,
+            "lng": 107.9897
+          },
+          "description": "Cầu Vàng nổi tiếng thế giới, khu nghỉ dưỡng trên đỉnh núi",
+          "open_hours": "07:00 - 22:00",
+          "price_range": "750.000 - 900.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "DN003",
+          "name": "Bãi biển Mỹ Khê",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "bien",
+            "the_gioi_bau_chon"
+          ],
+          "address": "Mỹ Khê, Sơn Trà, Đà Nẵng",
+          "coordinates": {
+            "lat": 16.0567,
+            "lng": 108.2476
+          },
+          "description": "1 trong 6 bãi biển đẹp nhất hành tinh theo Forbes, cát trắng mịn",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.7
+        },
+        {
+          "id": "DN004",
+          "name": "Chợ Hàn",
+          "category": "mua_sam",
+          "tags": [
+            "cho",
+            "an_uong",
+            "hai_san"
+          ],
+          "address": "119 Trần Phú, Hải Châu, Đà Nẵng",
+          "coordinates": {
+            "lat": 16.0671,
+            "lng": 108.2231
+          },
+          "description": "Chợ truyền thống trung tâm Đà Nẵng, hải sản và ẩm thực đặc sản",
+          "open_hours": "06:00 - 20:00",
+          "price_range": "Đa dạng",
+          "rating": 4.3
+        },
+        {
+          "id": "DN005",
+          "name": "Mì Quảng Bà Mua",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "dac_san",
+            "mi_quang"
+          ],
+          "address": "110 Lê Lợi, Hải Châu, Đà Nẵng",
+          "coordinates": {
+            "lat": 16.0672,
+            "lng": 108.2198
+          },
+          "description": "Quán mì Quảng nổi tiếng nhất Đà Nẵng, chuẩn vị xứ Quảng",
+          "open_hours": "06:30 - 11:00, 16:00 - 20:00",
+          "price_range": "35.000 - 55.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "DN006",
+          "name": "Bán Đảo Sơn Trà",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "thien_nhien",
+            "vooc"
+          ],
+          "address": "Bán Đảo Sơn Trà, Đà Nẵng",
+          "coordinates": {
+            "lat": 16.1081,
+            "lng": 108.2779
+          },
+          "description": "Khu bảo tồn vooc chà vá chân nâu quý hiếm, trekking thiên nhiên",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        }
+      ],
+      "city": "Đà Nẵng",
+      "search_terms": [
+        "da nang",
+        "đà nẵng",
+        "danang",
+        "dn"
+      ]
+    },
+    {
+      "id": 31,
+      "code": "QNA",
+      "name": "Quảng Nam",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 15.5394,
+        "lng": 108.0191
+      },
+      "places": [
+        {
+          "id": "QNA001",
+          "name": "Phố Cổ Hội An",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "di_san_the_gioi",
+            "pho_co"
+          ],
+          "address": "TP. Hội An, Quảng Nam",
+          "coordinates": {
+            "lat": 15.8801,
+            "lng": 108.338
+          },
+          "description": "Di sản văn hóa thế giới UNESCO, phố cổ lung linh đèn lồng về đêm",
+          "open_hours": "24/7",
+          "price_range": "Vé tham quan: 120.000 VNĐ",
+          "rating": 4.8
+        },
+        {
+          "id": "QNA002",
+          "name": "Mỳ Cao Lầu Hội An",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "dac_san",
+            "mi_hoi_an"
+          ],
+          "address": "Chợ Hội An và nhiều quán trong phố cổ",
+          "coordinates": {
+            "lat": 15.8768,
+            "lng": 108.3273
+          },
+          "description": "Đặc sản mì Cao Lầu chỉ có tại Hội An, sợi mì làm từ nước giếng Bá Lễ",
+          "open_hours": "07:00 - 21:00",
+          "price_range": "40.000 - 60.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "QNA003",
+          "name": "Thánh Địa Mỹ Sơn",
+          "category": "du_lich",
+          "tags": [
+            "di_san_the_gioi",
+            "cham_pa",
+            "lich_su"
+          ],
+          "address": "Duy Phú, Duy Xuyên, Quảng Nam",
+          "coordinates": {
+            "lat": 15.7638,
+            "lng": 108.1245
+          },
+          "description": "Di sản văn hóa thế giới UNESCO, quần thể đền tháp Chăm Pa cổ",
+          "open_hours": "06:00 - 17:00",
+          "price_range": "100.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "QNA004",
+          "name": "Cù Lao Chàm",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "bien_dao",
+            "san_ho",
+            "lan_bien"
+          ],
+          "address": "Tân Hiệp, TP. Hội An, Quảng Nam",
+          "coordinates": {
+            "lat": 15.9586,
+            "lng": 108.5315
+          },
+          "description": "Khu dự trữ sinh quyển UNESCO, lặn ngắm san hô, snorkeling tuyệt đẹp",
+          "open_hours": "Theo tour: 06:00 - 17:00",
+          "price_range": "Tour: 350.000 - 700.000 VNĐ",
+          "rating": 4.7
+        }
+      ],
+      "city": "Hội An",
+      "search_terms": [
+        "quang nam",
+        "quảng nam",
+        "hoi an",
+        "hội an",
+        "my son",
+        "mỹ sơn"
+      ]
+    },
+    {
+      "id": 32,
+      "code": "QNg",
+      "name": "Quảng Ngãi",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 15.1214,
+        "lng": 108.8043
+      },
+      "places": [
+        {
+          "id": "QNg001",
+          "name": "Đảo Lý Sơn",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "bien_dao",
+            "toi_bua"
+          ],
+          "address": "Lý Sơn, Quảng Ngãi",
+          "coordinates": {
+            "lat": 15.3782,
+            "lng": 109.1198
+          },
+          "description": "Đảo núi lửa với vách đá dựng đứng, cánh đồng tỏi và hành hương độc đáo",
+          "open_hours": "24/7",
+          "price_range": "Tàu cao tốc: 200.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "QNg002",
+          "name": "Tỏi Lý Sơn",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "toi"
+          ],
+          "address": "Lý Sơn, Quảng Ngãi",
+          "coordinates": {
+            "lat": 15.3782,
+            "lng": 109.1198
+          },
+          "description": "Tỏi một nhánh đặc sản Lý Sơn, thơm ngon nổi tiếng cả nước",
+          "open_hours": "Mùa thu hoạch: tháng 1-3",
+          "price_range": "100.000 - 300.000 VNĐ/kg",
+          "rating": 4.7
+        }
+      ],
+      "city": "Quảng Ngãi",
+      "search_terms": [
+        "quang ngai",
+        "quảng ngãi",
+        "ly son",
+        "lý sơn"
+      ]
+    },
+    {
+      "id": 33,
+      "code": "BD",
+      "name": "Bình Định",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 13.7765,
+        "lng": 109.2234
+      },
+      "places": [
+        {
+          "id": "BD001",
+          "name": "Eo Gió",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "view_bien"
+          ],
+          "address": "Nhơn Lý, Quy Nhơn, Bình Định",
+          "coordinates": {
+            "lat": 13.8354,
+            "lng": 109.3221
+          },
+          "description": "Eo biển đẹp như tranh, check-in hot nhất Quy Nhơn với view đá và sóng",
+          "open_hours": "06:00 - 18:00",
+          "price_range": "20.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "BD002",
+          "name": "Kỳ Co - Hòn Khô",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "bien_xanh",
+            "lan_bien"
+          ],
+          "address": "Nhơn Hải, Quy Nhơn, Bình Định",
+          "coordinates": {
+            "lat": 13.7582,
+            "lng": 109.3102
+          },
+          "description": "Biển xanh ngắt trong vắt, điểm lặn ngắm san hô và hải sản tươi sống",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "Tàu: 150.000 VNĐ/người",
+          "rating": 4.8
+        },
+        {
+          "id": "BD003",
+          "name": "Bánh Xèo Quy Nhơn",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "banh_xeo"
+          ],
+          "address": "Nhiều quán tại TP. Quy Nhơn",
+          "coordinates": {
+            "lat": 13.7765,
+            "lng": 109.2234
+          },
+          "description": "Bánh xèo siêu nhỏ đặc trưng Quy Nhơn, ăn kèm rau cuốn bánh tráng",
+          "open_hours": "10:00 - 21:00",
+          "price_range": "15.000 - 30.000 VNĐ/dĩa",
+          "rating": 4.5
+        }
+      ],
+      "city": "Quy Nhơn",
+      "search_terms": [
+        "binh dinh",
+        "bình định",
+        "quy nhon",
+        "quy nhơn"
+      ]
+    },
+    {
+      "id": 34,
+      "code": "PY",
+      "name": "Phú Yên",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 13.0882,
+        "lng": 109.0929
+      },
+      "places": [
+        {
+          "id": "PY001",
+          "name": "Gành Đá Đĩa",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "thien_nhien_ky_thu"
+          ],
+          "address": "An Ninh Đông, Tuy An, Phú Yên",
+          "coordinates": {
+            "lat": 13.3562,
+            "lng": 109.2651
+          },
+          "description": "Cột đá bazan hình lục lăng kỳ lạ bên bờ biển, kỳ quan thiên nhiên",
+          "open_hours": "07:00 - 18:00",
+          "price_range": "30.000 VNĐ",
+          "rating": 4.7
+        },
+        {
+          "id": "PY002",
+          "name": "Vũng Rô",
+          "category": "du_lich",
+          "tags": [
+            "bien",
+            "view_dep",
+            "nghi_duong"
+          ],
+          "address": "Hòa Xuân Nam, Đông Hòa, Phú Yên",
+          "coordinates": {
+            "lat": 12.9045,
+            "lng": 109.4372
+          },
+          "description": "Vịnh biển hình vòng cung đẹp như tranh, nước trong xanh",
+          "open_hours": "24/7",
+          "price_range": "Miễn phí",
+          "rating": 4.6
+        }
+      ],
+      "city": "Tuy Hòa",
+      "search_terms": [
+        "phu yen",
+        "phú yên",
+        "tuy hoa",
+        "tuy hòa",
+        "ganh da dia",
+        "gành đá đĩa"
+      ]
+    },
+    {
+      "id": 35,
+      "code": "KH",
+      "name": "Khánh Hòa",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 12.2388,
+        "lng": 109.1967
+      },
+      "places": [
+        {
+          "id": "KH001",
+          "name": "Vinpearl Land Nha Trang",
+          "category": "vui_choi",
+          "tags": [
+            "hot_trend",
+            "cong_vien_giai_tri",
+            "gia_dinh"
+          ],
+          "address": "Đảo Hòn Tre, Nha Trang, Khánh Hòa",
+          "coordinates": {
+            "lat": 12.2177,
+            "lng": 109.2459
+          },
+          "description": "Khu vui chơi giải trí đẳng cấp nhất Việt Nam, đi cáp treo ra đảo",
+          "open_hours": "08:30 - 22:00",
+          "price_range": "750.000 - 900.000 VNĐ",
+          "rating": 4.5
+        },
+        {
+          "id": "KH002",
+          "name": "Bãi Dài - Cam Ranh",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "bien_dep",
+            "resort"
+          ],
+          "address": "Cam Lâm, Khánh Hòa",
+          "coordinates": {
+            "lat": 11.9817,
+            "lng": 109.1543
+          },
+          "description": "Bãi biển thiên đường dài 10km, nước trong xanh tuyệt đẹp",
+          "open_hours": "24/7",
+          "price_range": "Resort từ 3.000.000 VNĐ/đêm",
+          "rating": 4.8
+        },
+        {
+          "id": "KH003",
+          "name": "Yến Sào Nha Trang",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "to_yen"
+          ],
+          "address": "Nhiều nhà hàng tại Nha Trang",
+          "coordinates": {
+            "lat": 12.2388,
+            "lng": 109.1967
+          },
+          "description": "Tổ yến đặc sản nổi tiếng nhất Nha Trang, súp yến chưng đường phèn",
+          "open_hours": "09:00 - 21:00",
+          "price_range": "150.000 - 500.000 VNĐ/tô",
+          "rating": 4.5
+        },
+        {
+          "id": "KH004",
+          "name": "Bún Cá Nha Trang Út Lượm",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "bun_ca"
+          ],
+          "address": "50 Trần Quý Cáp, Nha Trang",
+          "coordinates": {
+            "lat": 12.2453,
+            "lng": 109.1952
+          },
+          "description": "Bún cá đặc sản Khánh Hòa nổi tiếng, nước dùng trong ngọt thơm",
+          "open_hours": "06:00 - 11:00",
+          "price_range": "40.000 - 60.000 VNĐ",
+          "rating": 4.6
+        }
+      ],
+      "city": "Nha Trang",
+      "search_terms": [
+        "khanh hoa",
+        "khánh hòa",
+        "nha trang"
+      ]
+    },
+    {
+      "id": 36,
+      "code": "NT",
+      "name": "Ninh Thuận",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 11.5638,
+        "lng": 108.9882
+      },
+      "places": [
+        {
+          "id": "NT001",
+          "name": "Đồi Cát Bay",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "cat_trang"
+          ],
+          "address": "Mũi Dinh, Thuận Nam, Ninh Thuận",
+          "coordinates": {
+            "lat": 11.3721,
+            "lng": 108.9784
+          },
+          "description": "Đồi cát trắng hoang sơ đẹp nhất miền Trung, lướt ván cát",
+          "open_hours": "06:00 - 18:00",
+          "price_range": "50.000 VNĐ, ván cát: 30.000 VNĐ",
+          "rating": 4.5
+        },
+        {
+          "id": "NT002",
+          "name": "Vườn Nho Thái An",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "vuon_nho",
+            "check_in"
+          ],
+          "address": "Phước Thuận, Ninh Phước, Ninh Thuận",
+          "coordinates": {
+            "lat": 11.4421,
+            "lng": 108.8372
+          },
+          "description": "Vườn nho xanh mướt độc nhất Việt Nam, chụp ảnh check-in đẹp",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "50.000 VNĐ vào vườn",
+          "rating": 4.4
+        },
+        {
+          "id": "NT003",
+          "name": "Thịt Cừu Ninh Thuận",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "thit_cuu"
+          ],
+          "address": "Nhiều nhà hàng tại TP. Phan Rang",
+          "coordinates": {
+            "lat": 11.5638,
+            "lng": 108.9882
+          },
+          "description": "Thịt cừu nướng đặc sản vùng khô hạn, thơm ngon không mùi",
+          "open_hours": "10:00 - 22:00",
+          "price_range": "150.000 - 400.000 VNĐ/phần",
+          "rating": 4.6
+        }
+      ],
+      "city": "Phan Rang",
+      "search_terms": [
+        "ninh thuan",
+        "ninh thuận",
+        "phan rang",
+        "vinh hy",
+        "vĩnh hy"
+      ]
+    },
+    {
+      "id": 37,
+      "code": "BT",
+      "name": "Bình Thuận",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 10.9804,
+        "lng": 108.2519
+      },
+      "places": [
+        {
+          "id": "BT001",
+          "name": "Đồi Cát Đỏ Mũi Né",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "cat_do"
+          ],
+          "address": "Mũi Né, Phan Thiết, Bình Thuận",
+          "coordinates": {
+            "lat": 10.9507,
+            "lng": 108.2987
+          },
+          "description": "Đồi cát đỏ huyền thoại, jeep tour và trượt ván cát lúc bình minh",
+          "open_hours": "05:00 - 18:00",
+          "price_range": "Xe jeep: 150.000 VNĐ/người",
+          "rating": 4.6
+        },
+        {
+          "id": "BT002",
+          "name": "Suối Tiên Mũi Né",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "suoi"
+          ],
+          "address": "Mũi Né, Phan Thiết, Bình Thuận",
+          "coordinates": {
+            "lat": 10.9798,
+            "lng": 108.2673
+          },
+          "description": "Dòng suối chảy qua đất đỏ tạo cảnh quan nhiều màu sắc kỳ ảo",
+          "open_hours": "06:00 - 18:00",
+          "price_range": "10.000 VNĐ",
+          "rating": 4.3
+        },
+        {
+          "id": "BT003",
+          "name": "Bánh Căn Phan Thiết",
+          "category": "an_uong",
+          "tags": [
+            "dac_san",
+            "banh_can"
+          ],
+          "address": "Nhiều quán trên đường Nguyễn Đình Chiểu, Mũi Né",
+          "coordinates": {
+            "lat": 10.9501,
+            "lng": 108.2912
+          },
+          "description": "Bánh căn đặc sản Phan Thiết, nướng chảo đất, ăn kèm mắm nêm",
+          "open_hours": "06:00 - 22:00",
+          "price_range": "20.000 - 40.000 VNĐ/dĩa",
+          "rating": 4.5
+        }
+      ],
+      "city": "Phan Thiết",
+      "search_terms": [
+        "binh thuan",
+        "bình thuận",
+        "phan thiet",
+        "phan thiết",
+        "mui ne",
+        "mũi né"
+      ]
+    },
+    {
+      "id": 38,
+      "code": "GL",
+      "name": "Gia Lai",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 13.9833,
+        "lng": 108.0
+      },
+      "places": [
+        {
+          "id": "GL001",
+          "name": "Biển Hồ T'Nưng",
+          "category": "du_lich",
+          "tags": [
+            "thien_nhien",
+            "ho_nuoc",
+            "check_in"
+          ],
+          "address": "TP. Pleiku, Gia Lai",
+          "coordinates": {
+            "lat": 13.9962,
+            "lng": 107.9673
+          },
+          "description": "Hồ miệng núi lửa cổ đẹp như gương khổng lồ giữa rừng thông",
+          "open_hours": "06:00 - 18:00",
+          "price_range": "20.000 VNĐ",
+          "rating": 4.5
+        },
+        {
+          "id": "GL002",
+          "name": "Phở Khô Gia Lai",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "dac_san",
+            "pho_kho"
+          ],
+          "address": "Nhiều quán tại TP. Pleiku, Gia Lai",
+          "coordinates": {
+            "lat": 13.9833,
+            "lng": 108.0
+          },
+          "description": "Phở khô đặc sản Gia Lai - 2 tô riêng biệt: sợi phở khô + nước dùng",
+          "open_hours": "06:00 - 11:00, 16:00 - 20:00",
+          "price_range": "35.000 - 50.000 VNĐ",
+          "rating": 4.6
+        }
+      ],
+      "city": "Pleiku",
+      "search_terms": [
+        "gia lai",
+        "pleiku"
+      ]
+    },
+    {
+      "id": 39,
+      "code": "KT",
+      "name": "Kon Tum",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 14.3545,
+        "lng": 108.0078
+      },
+      "places": [
+        {
+          "id": "KT001",
+          "name": "Nhà Thờ Gỗ Kon Tum",
+          "category": "du_lich",
+          "tags": [
+            "check_in",
+            "kien_truc",
+            "van_hoa"
+          ],
+          "address": "Nguyễn Huệ, TP. Kon Tum",
+          "coordinates": {
+            "lat": 14.3545,
+            "lng": 108.0078
+          },
+          "description": "Nhà thờ gỗ cổ 1913, kết hợp kiến trúc Gothic và nhà rông Tây Nguyên",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "Miễn phí",
+          "rating": 4.5
+        }
+      ],
+      "city": "Kon Tum",
+      "search_terms": [
+        "kon tum",
+        "kontum"
+      ]
+    },
+    {
+      "id": 40,
+      "code": "DL",
+      "name": "Đắk Lắk",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 12.7101,
+        "lng": 108.2378
+      },
+      "places": [
+        {
+          "id": "DL001",
+          "name": "Buôn Đôn - Cưỡi Voi",
+          "category": "du_lich",
+          "tags": [
+            "thien_nhien",
+            "voi",
+            "sinh_thai"
+          ],
+          "address": "Buôn Đôn, Đắk Lắk",
+          "coordinates": {
+            "lat": 12.9043,
+            "lng": 107.7281
+          },
+          "description": "Ngôi làng nổi tiếng với nghề thuần dưỡng voi, trải nghiệm tắm voi",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "200.000 - 500.000 VNĐ",
+          "rating": 4.3
+        },
+        {
+          "id": "DL002",
+          "name": "Cà Phê Vườn Trung Nguyên",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "ca_phe",
+            "dac_san"
+          ],
+          "address": "Buôn Ma Thuột, Đắk Lắk",
+          "coordinates": {
+            "lat": 12.6806,
+            "lng": 108.0378
+          },
+          "description": "Thủ đô cà phê Việt Nam, thưởng thức cà phê chuẩn vị Buôn Ma Thuột",
+          "open_hours": "06:00 - 22:00",
+          "price_range": "20.000 - 50.000 VNĐ",
+          "rating": 4.6
+        },
+        {
+          "id": "DL003",
+          "name": "Hồ Lắk",
+          "category": "du_lich",
+          "tags": [
+            "thien_nhien",
+            "ho_nuoc",
+            "sinh_thai"
+          ],
+          "address": "Lắk, Đắk Lắk",
+          "coordinates": {
+            "lat": 12.3547,
+            "lng": 108.1983
+          },
+          "description": "Hồ tự nhiên lớn nhất Tây Nguyên, du thuyền độc mộc của người M'Nông",
+          "open_hours": "06:00 - 18:00",
+          "price_range": "Thuyền: 100.000 VNĐ/người",
+          "rating": 4.5
+        }
+      ],
+      "city": "Buôn Ma Thuột",
+      "search_terms": [
+        "dak lak",
+        "đắk lắk",
+        "buon ma thuot",
+        "buôn ma thuột",
+        "dac lac"
+      ]
+    },
+    {
+      "id": 41,
+      "code": "DK",
+      "name": "Đắk Nông",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 12.0046,
+        "lng": 107.6876
+      },
+      "places": [
+        {
+          "id": "DK001",
+          "name": "Công Viên Địa Chất Đắk Nông",
+          "category": "du_lich",
+          "tags": [
+            "di_san_the_gioi",
+            "dia_chat",
+            "hang_dong_dung_nham"
+          ],
+          "address": "Đắk Nông",
+          "coordinates": {
+            "lat": 12.0046,
+            "lng": 107.6876
+          },
+          "description": "Công viên địa chất toàn cầu UNESCO với hệ thống hang động dung nham",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "30.000 - 50.000 VNĐ",
+          "rating": 4.6
+        }
+      ],
+      "city": "Gia Nghĩa",
+      "search_terms": [
+        "dak nong",
+        "đắk nông",
+        "gia nghia",
+        "gia nghĩa"
+      ]
+    },
+    {
+      "id": 42,
+      "code": "LDg",
+      "name": "Lâm Đồng",
+      "type": "Tỉnh",
+      "coordinates": {
+        "lat": 11.9465,
+        "lng": 108.4419
+      },
+      "places": [
+        {
+          "id": "LDg001",
+          "name": "Đà Lạt - Thành Phố Ngàn Hoa",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "hoa",
+            "cafe",
+            "nghi_duong"
+          ],
+          "address": "TP. Đà Lạt, Lâm Đồng",
+          "coordinates": {
+            "lat": 11.9404,
+            "lng": 108.4583
+          },
+          "description": "Thành phố hoa trên cao nguyên 1500m, khí hậu mát mẻ quanh năm",
+          "open_hours": "24/7",
+          "price_range": "Đa dạng",
+          "rating": 4.7
+        },
+        {
+          "id": "LDg002",
+          "name": "Cáp Treo Datanla",
+          "category": "vui_choi",
+          "tags": [
+            "hot_trend",
+            "mao_hiem",
+            "tuot_ray"
+          ],
+          "address": "Đèo Prenn, Đà Lạt, Lâm Đồng",
+          "coordinates": {
+            "lat": 11.9026,
+            "lng": 108.4397
+          },
+          "description": "Cáp treo và máng trượt giữa rừng thông, thác Datanla hùng vĩ",
+          "open_hours": "07:00 - 17:00",
+          "price_range": "150.000 - 300.000 VNĐ",
+          "rating": 4.4
+        },
+        {
+          "id": "LDg003",
+          "name": "Đường Hầm Đất Sét",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "check_in",
+            "di_san"
+          ],
+          "address": "3 Tháng 2, TP. Đà Lạt",
+          "coordinates": {
+            "lat": 11.9429,
+            "lng": 108.4419
+          },
+          "description": "Công trình nghệ thuật bằng đất sét độc nhất thế giới, điểm check-in hot",
+          "open_hours": "07:00 - 18:00",
+          "price_range": "50.000 VNĐ",
+          "rating": 4.3
+        },
+        {
+          "id": "LDg004",
+          "name": "Bánh Tráng Nướng Đà Lạt",
+          "category": "an_uong",
+          "tags": [
+            "hot_trend",
+            "street_food",
+            "banh_trang"
+          ],
+          "address": "Chợ đêm Đà Lạt, TP. Đà Lạt",
+          "coordinates": {
+            "lat": 11.9418,
+            "lng": 108.4387
+          },
+          "description": "Bánh tráng nướng pizza Đà Lạt - street food đặc trưng không thể bỏ qua",
+          "open_hours": "17:00 - 23:00",
+          "price_range": "15.000 - 30.000 VNĐ",
+          "rating": 4.5
+        },
+        {
+          "id": "LDg005",
+          "name": "Vườn Hoa Đà Lạt",
+          "category": "du_lich",
+          "tags": [
+            "hot_trend",
+            "hoa",
+            "check_in"
+          ],
+          "address": "2 Phù Đổng Thiên Vương, Đà Lạt",
+          "coordinates": {
+            "lat": 11.9543,
+            "lng": 108.4556
+          },
+          "description": "Vườn hoa rực rỡ 4 mùa, điểm check-in đẹp nhất Đà Lạt",
+          "open_hours": "07:30 - 17:30",
+          "price_range": "80.000 VNĐ",
+          "rating": 4.4
+        }
+      ],
+      "city": "Đà Lạt",
+      "search_terms": [
+        "lam dong",
+        "lâm đồng",
+        "da lat",
+        "đà lạt",
+        "dalat"
+      ]
+    }
+  ]
+}

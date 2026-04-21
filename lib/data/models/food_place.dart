@@ -5,6 +5,12 @@ class FoodPlace {
   final double lng;
   final List<String> tags;
   final double avgCost;
+  final String? description;
+  final String? address;
+  final double? rating;
+  final String? priceRange;
+  final String? openHours;
+  final String? category;
 
   FoodPlace({
     required this.id,
@@ -13,16 +19,28 @@ class FoodPlace {
     required this.lng,
     required this.tags,
     required this.avgCost,
+    this.description,
+    this.address,
+    this.rating,
+    this.priceRange,
+    this.openHours,
+    this.category,
   });
 
   factory FoodPlace.fromJson(Map<String, dynamic> json) {
     return FoodPlace(
       id: json['id'] as String,
       name: json['name'] as String,
-      lat: (json['lat'] as num).toDouble(),
-      lng: (json['lng'] as num).toDouble(),
+      lat: (json['coordinates']['lat'] as num).toDouble(),
+      lng: (json['coordinates']['lng'] as num).toDouble(),
       tags: List<String>.from(json['tags'] as List),
-      avgCost: (json['avg_cost'] as num).toDouble(),
+      avgCost: json['avg_cost'] != null ? (json['avg_cost'] as num).toDouble() : 0.0,
+      description: json['description'] as String?,
+      address: json['address'] as String?,
+      rating: json['rating'] != null ? (json['rating'] as num).toDouble() : null,
+      priceRange: json['price_range'] as String?,
+      openHours: json['open_hours'] as String?,
+      category: json['category'] as String?,
     );
   }
 
@@ -30,10 +48,18 @@ class FoodPlace {
     return {
       'id': id,
       'name': name,
-      'lat': lat,
-      'lng': lng,
+      'coordinates': {
+        'lat': lat,
+        'lng': lng,
+      },
       'tags': tags,
       'avg_cost': avgCost,
+      'description': description,
+      'address': address,
+      'rating': rating,
+      'price_range': priceRange,
+      'open_hours': openHours,
+      'category': category,
     };
   }
 }
